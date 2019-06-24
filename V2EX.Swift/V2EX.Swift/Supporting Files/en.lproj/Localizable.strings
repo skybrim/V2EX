@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  V2EX.Swift
+
+  Created by Wiley on 2019/6/24.
+  Copyright © 2019 Wiley. All rights reserved.
+*/
+
+//右侧边栏
+tech = "Technology";
+creative = "Creative";
+play = "Play";
+apple = "Apple";
+jobs = "Jobs";
+deals = "Deals";
+city = "City";
+qa = "Q&A";
+hot = "Hot";
+all = "All";
+r2 = "R2";
+nodes = "nodes";
+members = "members";
+
+//左侧边栏
+more = "More";
+nodes = "Nodes";
+favorites = "Favorites";
+notifications = "Notifications";
+me = "My Center";
+
+//用户中心
+posts = "Posts";
+comments = "Comments";
+
+//账户设置
+accounts = "Accounts";
+current = "current";
+logOut ="LogOut";
+
+//更多
+viewOptions = "View Options";
+clearCache = "Clear Cache";
+
+rateV2ex = "Rate V2EX";
+reportAProblem = "Report a Problem";
+
+followThisProjectSourceCode = "Source Code";
+open-SourceLibraries = "Open Source Libraries";
+version = "Version";
+
+//节点导航
+navigation = "Navigation";
+
+//通知中心
+reply = "Reply";
+
+//帖子详情
+postDetails = "Topic Details";
+favorite = "Favorite";
+ignore = "Ignore";
+thank = "Thank";
+share = "Share";
+reply2 = "Reply";
+cancel2 = "Cancel";
