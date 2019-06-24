@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  V2EX
+//  V2EX.Swift
 //
-//  Created by Wiley on 2019/5/6.
+//  Created by Wiley on 2019/6/24.
 //  Copyright © 2019 Wiley. All rights reserved.
 //
 
