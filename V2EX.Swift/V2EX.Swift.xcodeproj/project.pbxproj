@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B2EBC3F2CF84EB23F7E3051 /* Pods_V2EX_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FBA473D5338FDD13C3C01E /* Pods_V2EX_Swift.framework */; };
+		B862ADB922C2088700889463 /* NodesVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B862ADB822C2088700889463 /* NodesVViewController.swift */; };
 		B8E7A6A022C07B2600CB04D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E7A69F22C07B2600CB04D2 /* AppDelegate.swift */; };
 		B8E7A6A522C07B2600CB04D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E7A6A322C07B2600CB04D2 /* Main.storyboard */; };
 		B8E7A6A722C07B2800CB04D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E7A6A622C07B2800CB04D2 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		19008DE21C7D0A8031C2629E /* Pods-V2EX.Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.Swift.debug.xcconfig"; path = "Target Support Files/Pods-V2EX.Swift/Pods-V2EX.Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		52FBA473D5338FDD13C3C01E /* Pods_V2EX_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_V2EX_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5F8C3B76210E663CF8A8A4 /* Pods-V2EX.Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.Swift.release.xcconfig"; path = "Target Support Files/Pods-V2EX.Swift/Pods-V2EX.Swift.release.xcconfig"; sourceTree = "<group>"; };
+		B862ADB822C2088700889463 /* NodesVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesVViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8E7A69C22C07B2600CB04D2 /* V2EX.Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2EX.Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E7A69F22C07B2600CB04D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8E7A6A422C07B2600CB04D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E7A69F22C07B2600CB04D2 /* AppDelegate.swift */,
+				B862ADB822C2088700889463 /* NodesVViewController.swift */,
 				B8E7A6A322C07B2600CB04D2 /* Main.storyboard */,
 				B8E7A6AB22C07B2800CB04D2 /* Info.plist */,
 				B8E7A6B122C07D5E00CB04D2 /* Supporting Files */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E7A6A022C07B2600CB04D2 /* AppDelegate.swift in Sources */,
+				B862ADB922C2088700889463 /* NodesVViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
