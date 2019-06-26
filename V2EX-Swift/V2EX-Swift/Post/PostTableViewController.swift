@@ -19,14 +19,7 @@ class PostTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    var theme: String? {
-        didSet {
-            print("---\(theme!)---")
-        }
-    }
-    
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,4 +87,9 @@ class PostTableViewController: UITableViewController {
     }
     */
 
+    var theme: String? {
+        didSet {
+            print("---\(theme!)---")
+        }
+    }
 }
