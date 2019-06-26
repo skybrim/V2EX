@@ -9,13 +9,28 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-
-
+    
+    //MARK: - UISplitViewControllerDelegate
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController
+        ) -> Bool {
+        //iPhone和iPad上，都必须展示nodes
+        return true
+    }
+    
+    //MARK: - application life cycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let splitViewController = window!.rootViewController as! UISplitViewController
+        splitViewController.delegate = self
+        splitViewController.preferredDisplayMode = .allVisible
+        
         return true
     }
 
