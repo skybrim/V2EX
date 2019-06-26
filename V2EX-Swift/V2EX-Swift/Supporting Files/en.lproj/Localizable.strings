@@ -17,8 +17,8 @@ qa = "Q&A";
 hot = "Hot";
 all = "All";
 r2 = "R2";
-nodes = "nodes";
-members = "members";
+nodes = "Nodes";
+members = "Members";
 
 more = "More";
 nodes = "Nodes";

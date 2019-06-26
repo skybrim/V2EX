@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8009E1D22C3C177001670B2 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8009E1C22C3C177001670B2 /* PostTableViewController.swift */; };
+		B8009E1F22C3C38D001670B2 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8009E1E22C3C38D001670B2 /* Nodes.swift */; };
 		B829710D22C35DD800D8E756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B829710C22C35DD800D8E756 /* AppDelegate.swift */; };
 		B829711222C35DD800D8E756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829711022C35DD800D8E756 /* Main.storyboard */; };
 		B829711422C35DDB00D8E756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B829711322C35DDB00D8E756 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8009E1C22C3C177001670B2 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		B8009E1E22C3C38D001670B2 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
 		B829710922C35DD800D8E756 /* V2EX-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V2EX-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B829710C22C35DD800D8E756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B829711122C35DD800D8E756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +47,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8009E2022C3C723001670B2 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				B829713222C3684B00D8E756 /* NodesTableViewController.swift */,
+				B8009E1E22C3C38D001670B2 /* Nodes.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		B8009E2122C3C736001670B2 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				B8009E1C22C3C177001670B2 /* PostTableViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		B829710022C35DD800D8E756 = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				B829710C22C35DD800D8E756 /* AppDelegate.swift */,
-				B829713222C3684B00D8E756 /* NodesTableViewController.swift */,
+				B8009E2022C3C723001670B2 /* Nodes */,
+				B8009E2122C3C736001670B2 /* Post */,
 				B829711022C35DD800D8E756 /* Main.storyboard */,
 				B829711822C35DDB00D8E756 /* Info.plist */,
 				B829712122C35E4900D8E756 /* Supporting Files */,
@@ -157,7 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B829710D22C35DD800D8E756 /* AppDelegate.swift in Sources */,
+				B8009E1D22C3C177001670B2 /* PostTableViewController.swift in Sources */,
 				B829713322C3684B00D8E756 /* NodesTableViewController.swift in Sources */,
+				B8009E1F22C3C38D001670B2 /* Nodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
