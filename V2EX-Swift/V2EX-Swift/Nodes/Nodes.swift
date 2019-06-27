@@ -10,8 +10,6 @@ import Foundation
 
 struct Nodes {
     
-    var nodesInfo = [String]()
-    
     init() {
         nodesInfo = [
             NSLocalizedString("tech", comment: "Technology"),
@@ -29,4 +27,6 @@ struct Nodes {
             NSLocalizedString("members", comment: "Members"),
         ]
     }
+    
+    var nodesInfo = [String]()
 }
