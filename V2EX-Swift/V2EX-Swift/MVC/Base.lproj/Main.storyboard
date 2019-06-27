@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="1419" y="-681"/>
         </scene>
-        <!--Post List Table View Controller-->
+        <!--Topic List Table View Controller-->
         <scene sceneID="SM4-de-u7P">
             <objects>
-                <tableViewController storyboardIdentifier="Post View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jHH-nc-5UV" customClass="PostListTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Post View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jHH-nc-5UV" customClass="TopicListTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nXe-CI-K5H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

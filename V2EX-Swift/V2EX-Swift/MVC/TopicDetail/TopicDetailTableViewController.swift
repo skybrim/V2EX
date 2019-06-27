@@ -1,14 +1,14 @@
 //
-//  PostTableViewController.swift
+//  PostDetailTableViewController.swift
 //  V2EX-Swift
 //
-//  Created by wiley on 2019/6/26.
+//  Created by Wiley on 2019/6/27.
 //  Copyright © 2019 Wiley. All rights reserved.
 //
 
 import UIKit
 
-class PostListTableViewController: UITableViewController {
+class TopicDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +24,23 @@ class PostListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return 0
     }
-    
+
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Post Cell", for: indexPath)
-        cell.textLabel?.text = String(indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,26 +86,5 @@ class PostListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: - Restore
-    
-    override func encodeRestorableState(with coder: NSCoder) {
-        super.encodeRestorableState(with: coder)
-        coder.encode(theme, forKey: "kPostTheme")
-    }
-    
-    override func decodeRestorableState(with coder: NSCoder) {
-        super.decodeRestorableState(with: coder)
-        if let theme = coder.decodeObject(forKey: "kPostTheme") as? String{
-            self.theme = theme
-        }
-    }
-    
-    // MARK: - property
-    
-    var theme: String? {
-        didSet {
-            title = theme
-        }
-    }
+
 }

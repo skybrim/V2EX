@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         collapseSecondary secondaryViewController: UIViewController,
         onto primaryViewController: UIViewController
         ) -> Bool {
-        if let cvc = secondaryViewController as? PostListTableViewController {
+        if let cvc = secondaryViewController as? TopicListTableViewController {
             return cvc.theme == nil
         }
         return true

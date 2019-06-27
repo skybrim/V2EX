@@ -20,7 +20,7 @@ class NodesTableViewController: UITableViewController, UISplitViewControllerDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "Show Post List" {
-            if let destination = segue.destination as? PostListTableViewController,
+            if let destination = segue.destination as? TopicListTableViewController,
                 let cell = sender as? UITableViewCell {
                 destination.theme = cell.textLabel?.text
             }
