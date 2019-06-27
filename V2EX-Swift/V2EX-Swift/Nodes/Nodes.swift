@@ -12,19 +12,19 @@ struct Nodes {
     
     init() {
         nodesInfo = [
-            NSLocalizedString("tech", comment: "Technology"),
-            NSLocalizedString("creative", comment: "Creative"),
-            NSLocalizedString("play", comment: "Play"),
-            NSLocalizedString("apple", comment: "Apple"),
-            NSLocalizedString("jobs", comment: "Jobs"),
-            NSLocalizedString("deals", comment: "Deals"),
-            NSLocalizedString("city", comment: "City"),
-            NSLocalizedString("qa", comment: "Q&A"),
-            NSLocalizedString("hot", comment: "Hot"),
-            NSLocalizedString("all", comment: "All"),
-            NSLocalizedString("r2", comment: "R2"),
-            NSLocalizedString("nodes", comment: "Nodes"),
-            NSLocalizedString("members", comment: "Members"),
+            "技术",
+            "创意",
+            "好玩",
+            "Apple",
+            "酷工作",
+            "交易",
+            "城市",
+            "问与答",
+            "最热",
+            "全部",
+            "R2",
+            "节点",
+            "关注",
         ]
     }
     

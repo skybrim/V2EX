@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         collapseSecondary secondaryViewController: UIViewController,
         onto primaryViewController: UIViewController
         ) -> Bool {
-        //iPhone和iPad上，都必须展示nodes
+        if let cvc = secondaryViewController as? PostListTableViewController {
+            return cvc.theme == nil
+        }
         return true
     }
     
@@ -38,11 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
         let splitViewController = window!.rootViewController as! UISplitViewController
         splitViewController.delegate = self
         splitViewController.preferredDisplayMode = .allVisible
-        
         return true
     }
 
@@ -67,7 +67,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

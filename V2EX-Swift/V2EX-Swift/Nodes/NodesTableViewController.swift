@@ -32,25 +32,33 @@ class NodesTableViewController: UITableViewController, UISplitViewControllerDele
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
+        } else if section == 1 {
+            return nodes.nodesInfo.count
+        } else {
+            return 1
         }
-        return nodes.nodesInfo.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let accountCell = tableView.dequeueReusableCell(withIdentifier: "Account Cell", for: indexPath)
-            accountCell.textLabel?.text = NSLocalizedString("accounts", comment: "Accounts")
+            accountCell.textLabel?.text = "用户"
             return accountCell
+        } else if indexPath.section == 1 {
+            let nodesCell = tableView.dequeueReusableCell(withIdentifier: "Nodes Cell", for: indexPath)
+            nodesCell.textLabel?.text = nodes.nodesInfo[indexPath.row]
+            return nodesCell
+        } else {
+            let navigationCell = tableView.dequeueReusableCell(withIdentifier: "Navigation Cell", for: indexPath)
+            navigationCell.textLabel?.text = "节点导航"
+            return navigationCell
         }
-        let nodesCell = tableView.dequeueReusableCell(withIdentifier: "Nodes Cell", for: indexPath)
-        nodesCell.textLabel?.text = nodes.nodesInfo[indexPath.row]
-        return nodesCell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
