@@ -10,6 +10,7 @@
 		0E08E95690E4D0C25BDBF5DA /* Pods_V2EX_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B255F2F794AF686CEC5026 /* Pods_V2EX_Swift.framework */; };
 		B8009E1D22C3C177001670B2 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8009E1C22C3C177001670B2 /* PostTableViewController.swift */; };
 		B8009E1F22C3C38D001670B2 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8009E1E22C3C38D001670B2 /* Nodes.swift */; };
+		B806022B22C4AC190076BC19 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806022A22C4AC190076BC19 /* AccountTableViewController.swift */; };
 		B829710D22C35DD800D8E756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B829710C22C35DD800D8E756 /* AppDelegate.swift */; };
 		B829711222C35DD800D8E756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829711022C35DD800D8E756 /* Main.storyboard */; };
 		B829711422C35DDB00D8E756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B829711322C35DDB00D8E756 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		A9FC7B2F64482CF622AEBB6F /* Pods-V2EX-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX-Swift.release.xcconfig"; path = "Target Support Files/Pods-V2EX-Swift/Pods-V2EX-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		B8009E1C22C3C177001670B2 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		B8009E1E22C3C38D001670B2 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
+		B806022A22C4AC190076BC19 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		B829710922C35DD800D8E756 /* V2EX-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V2EX-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B829710C22C35DD800D8E756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B829711122C35DD800D8E756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		B806022922C4ABF30076BC19 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B806022A22C4AC190076BC19 /* AccountTableViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		B829710022C35DD800D8E756 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				B829710C22C35DD800D8E756 /* AppDelegate.swift */,
+				B806022922C4ABF30076BC19 /* Account */,
 				B8009E2022C3C723001670B2 /* Nodes */,
 				B8009E2122C3C736001670B2 /* Post */,
 				B829711022C35DD800D8E756 /* Main.storyboard */,
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B829710D22C35DD800D8E756 /* AppDelegate.swift in Sources */,
+				B806022B22C4AC190076BC19 /* AccountTableViewController.swift in Sources */,
 				B8009E1D22C3C177001670B2 /* PostTableViewController.swift in Sources */,
 				B829713322C3684B00D8E756 /* NodesTableViewController.swift in Sources */,
 				B8009E1F22C3C38D001670B2 /* Nodes.swift in Sources */,
