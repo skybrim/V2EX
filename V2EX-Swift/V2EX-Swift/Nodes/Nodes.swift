@@ -10,20 +10,23 @@ import Foundation
 
 struct Nodes {
     
-    static var nodes = [
-    NSLocalizedString("tech", comment: "Technology"),
-    NSLocalizedString("creative", comment: "Creative"),
-    NSLocalizedString("play", comment: "Play"),
-    NSLocalizedString("apple", comment: "Apple"),
-    NSLocalizedString("jobs", comment: "Jobs"),
-    NSLocalizedString("deals", comment: "Deals"),
-    NSLocalizedString("city", comment: "City"),
-    NSLocalizedString("qa", comment: "Q&A"),
-    NSLocalizedString("hot", comment: "Hot"),
-    NSLocalizedString("all", comment: "All"),
-    NSLocalizedString("r2", comment: "R2"),
-    NSLocalizedString("nodes", comment: "Nodes"),
-    NSLocalizedString("members", comment: "Members"),
-    ]
+    var nodesInfo = [String]()
     
+    init() {
+        nodesInfo = [
+            NSLocalizedString("tech", comment: "Technology"),
+            NSLocalizedString("creative", comment: "Creative"),
+            NSLocalizedString("play", comment: "Play"),
+            NSLocalizedString("apple", comment: "Apple"),
+            NSLocalizedString("jobs", comment: "Jobs"),
+            NSLocalizedString("deals", comment: "Deals"),
+            NSLocalizedString("city", comment: "City"),
+            NSLocalizedString("qa", comment: "Q&A"),
+            NSLocalizedString("hot", comment: "Hot"),
+            NSLocalizedString("all", comment: "All"),
+            NSLocalizedString("r2", comment: "R2"),
+            NSLocalizedString("nodes", comment: "Nodes"),
+            NSLocalizedString("members", comment: "Members"),
+        ]
+    }
 }

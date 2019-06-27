@@ -86,10 +86,26 @@ class PostTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Restore
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(theme, forKey: "kPostTheme")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        if let theme = coder.decodeObject(forKey: "kPostTheme") as? String{
+            self.theme = theme
+        }
+    }
+    
+    // MARK: - property
+    
     var theme: String? {
         didSet {
-            print("---\(theme!)---")
+            title = theme
         }
     }
 }
