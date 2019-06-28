@@ -19,6 +19,7 @@ enum V2EX {
     case nodesShow(id: String, name: String)
     case topicsLatest
     case topicsHot
+    case topicList(tab: String?, page: Int)
 //    case topicsShow(id: String)
     case topicsShow(username: String, node_id: String, node_name: String)
     case repliesShow(topic_id: String, page: Int, page_size: Int)
@@ -43,6 +44,11 @@ extension V2EX: TargetType {
             rawPath = "/api/topics/latest.json"
         case .topicsHot:
             rawPath = "/api/topics/hot.json"
+        case .topicList(let tab, let page):
+            if tab == "all" && page > 0 {
+                return "/recent"
+            }
+            return "/"
         case .topicsShow(_, _, _):
             rawPath = "/api/topics/show.json"
         case .repliesShow(_, _, _):
@@ -59,6 +65,12 @@ extension V2EX: TargetType {
         case .nodesShow(let id, let name):
             parmeters["id"] = id
             parmeters["name"] = name
+        case .topicList(let tab, let page):
+            if tab == "all" && page > 0 {
+                //只有全部分类能翻页
+                parmeters["p"] = page
+            }
+            parmeters["tab"] = tab ?? "all"
         case .topicsShow(let username, let node_id, let node_name):
             parmeters["username"] = username
             parmeters["node_id"] = node_id

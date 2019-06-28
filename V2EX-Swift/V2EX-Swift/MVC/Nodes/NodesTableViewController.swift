@@ -88,10 +88,10 @@ class NodesTableViewController: UITableViewController, UISplitViewControllerDele
     var nodes = Nodes()
     @IBOutlet var nodesTableView: UITableView! {
         didSet {
-            vProvider.request(.topicsShow(username: "", node_id: "", node_name: "all")) { (result) in
+            vProvider.request(.topicList(tab: "all", page: 0)) { (result) in
                 switch result {
-                case .success(let value):
-                    print(value)
+                case .success(let response):
+                    print(response)
                 case .failure(let error):
                     print(error)
                 }
