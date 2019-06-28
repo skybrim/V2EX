@@ -9,5 +9,6 @@ pod 'Moya'
 pod 'SnapKit'
 pod 'Kingfisher'
 pod 'MonkeyKing'
+pod 'HandyJSON'
 
 end
