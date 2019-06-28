@@ -107,14 +107,6 @@ class TopicListTableViewController: UITableViewController {
     var theme: String? {
         didSet {
             title = theme
-            vProvider.request(.nodes(tab: "all")) { (result) in
-                switch result {
-                case let .success(response):
-                    print(response)
-                case let .failure(error):
-                    print(error)
-                }
-            }
         }
     }
 }
