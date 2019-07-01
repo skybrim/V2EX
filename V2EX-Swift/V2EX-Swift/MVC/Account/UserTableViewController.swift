@@ -1,5 +1,5 @@
 //
-//  AccountTableViewController.swift
+//  UserTableViewController.swift
 //  V2EX-Swift
 //
 //  Created by Wiley on 2019/6/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountTableViewController: UITableViewController {
+class UserTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

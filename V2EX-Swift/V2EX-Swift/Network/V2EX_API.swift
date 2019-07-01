@@ -10,19 +10,22 @@ import Foundation
 import Moya
 import HandyJSON
 
-let vProvider = MoyaProvider<V2EX>() 
+let v2exProvider = MoyaProvider<V2EX>()
 
 enum V2EX {
     case siteInfo
     case siteStats
+    
     case nodesAll
     case nodesShow(id: String, name: String)
-    case topicsLatest
+    
     case topicsHot
+    case topicsLatest
     case topicList(tab: String?, page: Int)
-//    case topicsShow(id: String)
     case topicsShow(username: String, node_id: String, node_name: String)
+    
     case repliesShow(topic_id: String, page: Int, page_size: Int)
+    
     case membersShow(username: String)
 }
 
@@ -56,7 +59,6 @@ extension V2EX: TargetType {
         case .membersShow(_):
             rawPath = "/api/members/show.json"
         }
-        print(self.baseURL.absoluteString + rawPath)
         return rawPath
     }
     var task: Task {
@@ -84,9 +86,9 @@ extension V2EX: TargetType {
         default:
             break
         }
-        return .requestParameters(parameters: parmeters, encoding: JSONEncoding.default)
+        return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
-    var sampleData: Data { return "".data(using: String.Encoding.utf8)! }
+    var sampleData: Data { return "{}".data(using: String.Encoding.utf8)! }
     var headers: [String : String]? { return nil }
 }
 

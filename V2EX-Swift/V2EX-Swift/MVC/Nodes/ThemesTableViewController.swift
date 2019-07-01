@@ -1,5 +1,5 @@
 //
-//  NodesTableViewController.swift
+//  ThemesTableViewController.swift
 //  V2EX-Swift
 //
 //  Created by Wiley on 2019/6/26.
@@ -48,15 +48,15 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let accountCell = tableView.dequeueReusableCell(withIdentifier: "Account Cell", for: indexPath)
-            accountCell.textLabel?.text = "用户"
+            accountCell.textLabel?.text = NSLocalizedString("user", comment: "user")
             return accountCell
         } else if indexPath.section == 1 {
             let nodesCell = tableView.dequeueReusableCell(withIdentifier: "Nodes Cell", for: indexPath)
-            nodesCell.textLabel?.text = themes.themeInfo[indexPath.row]
+            nodesCell.textLabel?.text = NSLocalizedString(themes.themeInfo[indexPath.row], comment: themes.themeInfo[indexPath.row])
             return nodesCell
         } else {
             let navigationCell = tableView.dequeueReusableCell(withIdentifier: "Navigation Cell", for: indexPath)
-            navigationCell.textLabel?.text = "节点导航"
+            navigationCell.textLabel?.text = NSLocalizedString("planes", comment: "Planes")
             return navigationCell
         }
     }
@@ -85,13 +85,16 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
     }
     
     // MARK: - Property
+    
     var themes = Themes()
-    @IBOutlet var nodesTableView: UITableView! {
+    var siteStats: SiteStats?
+    
+    @IBOutlet var themesTableView: UITableView! {
         didSet {
-            vProvider.request(.topicList(tab: "all", page: 0)) { (result) in
+            v2exProvider.request(.membersShow(username: "skybrim")) { (result) in
                 switch result {
                 case .success(let response):
-                    print(response)
+                    print(String(data: response.data, encoding: .utf8) ?? "error")
                 case .failure(let error):
                     print(error)
                 }

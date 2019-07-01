@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-28" y="220"/>
         </scene>
-        <!--Nodes-->
+        <!--V2EX-->
         <scene sceneID="eSY-i8-7OF">
             <objects>
-                <tableViewController storyboardIdentifier="Nodes View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="9wF-dx-7db" customClass="NodesTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Nodes View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="9wF-dx-7db" customClass="ThemesTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEm-vw-K7m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,19 +71,19 @@
                             <outlet property="delegate" destination="9wF-dx-7db" id="KTm-lM-H4g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Nodes" id="BTL-Ob-AWX"/>
+                    <navigationItem key="navigationItem" title="V2EX" id="BTL-Ob-AWX"/>
                     <connections>
-                        <outlet property="nodesTableView" destination="fEm-vw-K7m" id="R28-Rc-mOj"/>
+                        <outlet property="themesTableView" destination="fEm-vw-K7m" id="R28-Rc-mOj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lK-Mr-8w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="-681"/>
         </scene>
-        <!--Account Table View Controller-->
+        <!--User Table View Controller-->
         <scene sceneID="bEx-YI-YN1">
             <objects>
-                <tableViewController id="HRN-Ut-BqJ" customClass="AccountTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HRN-Ut-BqJ" customClass="UserTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e3D-fd-4O0">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
