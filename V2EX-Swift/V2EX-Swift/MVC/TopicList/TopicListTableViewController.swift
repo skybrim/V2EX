@@ -30,17 +30,18 @@ class TopicListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return self.topicList.topics.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Post Cell", for: indexPath)
-        cell.textLabel?.text = String(indexPath.row)
-        return cell
+        let topicCell = tableView.dequeueReusableCell(withIdentifier: "Topic Cell", for: indexPath)
+        let topic = topicList.topics[indexPath.row]
+        topicCell.textLabel?.text = topic.topicTitle
+        return topicCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        
     }
 
     /*
@@ -106,7 +107,26 @@ class TopicListTableViewController: UITableViewController {
     
     var theme: String? {
         didSet {
-            title = theme
+            title = NSLocalizedString(theme!, comment: theme!)
+            //根据tab名称，请求数据。解析html
+            v2exUrlProvider.request(.topicList(tab: theme, page: 0)) { (result) in
+                switch result {
+                case .success(let response):
+                    let jiDoc = Ji(htmlData: response.data)
+                    if let topicListRootNode = jiDoc? .xPath("//body/div[@id='Wrapper']/div[@class='content']/div[@id='Main']/div[@class='box']/div[@class='cell item']") {
+                        for topicNode in topicListRootNode {
+                            let topic = Topic(topicNode)
+                            self.topicList.topics.append(topic)
+                        }
+                    }
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
     }
+    
+    var topicList = TopicList()
+    
 }

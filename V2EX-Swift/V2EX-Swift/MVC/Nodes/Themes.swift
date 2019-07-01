@@ -30,22 +30,4 @@ struct Themes {
     var themeInfo = [String]()
 }
 
-struct SiteStats: Codable {
-    
-    let topic_max: Int
-    let member_max: Int
-    
-    var json: Data? {
-        return try? JSONEncoder().encode(self)
-    }
-    
-    init?(json: Data) {
-        if let newValue = try? JSONDecoder().decode(SiteStats.self, from: json) {
-            self = newValue
-        } else {
-            return nil
-        }
-    }
-}
-
 

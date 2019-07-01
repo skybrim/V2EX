@@ -21,8 +21,9 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "Show Post List" {
             if let destination = segue.destination as? TopicListTableViewController,
-                let cell = sender as? UITableViewCell {
-                destination.theme = cell.textLabel?.text
+                let cell = sender as? UITableViewCell,
+                let indexPath = themesTableView.indexPath(for: cell) {
+                destination.theme = themes.themeInfo[indexPath.row]
             }
         } else if segue.identifier == "Show Account Info" {
             
@@ -87,18 +88,9 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
     // MARK: - Property
     
     var themes = Themes()
-    var siteStats: SiteStats?
     
     @IBOutlet var themesTableView: UITableView! {
         didSet {
-            v2exProvider.request(.membersShow(username: "skybrim")) { (result) in
-                switch result {
-                case .success(let response):
-                    print(String(data: response.data, encoding: .utf8) ?? "error")
-                case .failure(let error):
-                    print(error)
-                }
-            }
         }
     }
 }

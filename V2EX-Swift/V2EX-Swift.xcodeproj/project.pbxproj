@@ -12,7 +12,6 @@
 		B8009E1F22C3C38D001670B2 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8009E1E22C3C38D001670B2 /* Themes.swift */; };
 		B806022B22C4AC190076BC19 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806022A22C4AC190076BC19 /* UserTableViewController.swift */; };
 		B806023022C4AFA70076BC19 /* TopicDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806022F22C4AFA70076BC19 /* TopicDetailTableViewController.swift */; };
-		B806023622C4C3940076BC19 /* V2EX_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806023522C4C3940076BC19 /* V2EX_API.swift */; };
 		B829710D22C35DD800D8E756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B829710C22C35DD800D8E756 /* AppDelegate.swift */; };
 		B829711222C35DD800D8E756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829711022C35DD800D8E756 /* Main.storyboard */; };
 		B829711422C35DDB00D8E756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B829711322C35DDB00D8E756 /* Assets.xcassets */; };
@@ -20,6 +19,9 @@
 		B829713322C3684B00D8E756 /* ThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B829713222C3684B00D8E756 /* ThemesTableViewController.swift */; };
 		B8F2650222C9A11100ABC9D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8F2650422C9A11100ABC9D4 /* Localizable.strings */; };
 		B8F2650722C9B64E00ABC9D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650622C9B64E00ABC9D4 /* User.swift */; };
+		B8F2650922C9D57200ABC9D4 /* V2exUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650822C9D57200ABC9D4 /* V2exUrl.swift */; };
+		B8F2650B22C9D57F00ABC9D4 /* V2exApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650A22C9D57F00ABC9D4 /* V2exApi.swift */; };
+		B8F2650D22C9F27D00ABC9D4 /* TopicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650C22C9F27D00ABC9D4 /* TopicList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,6 @@
 		B8009E1E22C3C38D001670B2 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		B806022A22C4AC190076BC19 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		B806022F22C4AFA70076BC19 /* TopicDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailTableViewController.swift; sourceTree = "<group>"; };
-		B806023522C4C3940076BC19 /* V2EX_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2EX_API.swift; sourceTree = "<group>"; };
 		B829710922C35DD800D8E756 /* V2EX-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V2EX-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B829710C22C35DD800D8E756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B829711122C35DD800D8E756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +42,9 @@
 		B8F2650322C9A11100ABC9D4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B8F2650522C9A11D00ABC9D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8F2650622C9B64E00ABC9D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B8F2650822C9D57200ABC9D4 /* V2exUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exUrl.swift; sourceTree = "<group>"; };
+		B8F2650A22C9D57F00ABC9D4 /* V2exApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exApi.swift; sourceTree = "<group>"; };
+		B8F2650C22C9F27D00ABC9D4 /* TopicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicList.swift; sourceTree = "<group>"; };
 		D41C306E7E3A0F765CD31B57 /* Pods-V2EX-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX-Swift.debug.xcconfig"; path = "Target Support Files/Pods-V2EX-Swift/Pods-V2EX-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				B8009E1C22C3C177001670B2 /* TopicListTableViewController.swift */,
+				B8F2650C22C9F27D00ABC9D4 /* TopicList.swift */,
 			);
 			path = TopicList;
 			sourceTree = "<group>";
@@ -101,7 +106,8 @@
 		B806023722C4C6870076BC19 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B806023522C4C3940076BC19 /* V2EX_API.swift */,
+				B8F2650822C9D57200ABC9D4 /* V2exUrl.swift */,
+				B8F2650A22C9D57F00ABC9D4 /* V2exApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -287,9 +293,11 @@
 				B829710D22C35DD800D8E756 /* AppDelegate.swift in Sources */,
 				B806022B22C4AC190076BC19 /* UserTableViewController.swift in Sources */,
 				B8009E1D22C3C177001670B2 /* TopicListTableViewController.swift in Sources */,
+				B8F2650D22C9F27D00ABC9D4 /* TopicList.swift in Sources */,
+				B8F2650922C9D57200ABC9D4 /* V2exUrl.swift in Sources */,
 				B829713322C3684B00D8E756 /* ThemesTableViewController.swift in Sources */,
+				B8F2650B22C9D57F00ABC9D4 /* V2exApi.swift in Sources */,
 				B8F2650722C9B64E00ABC9D4 /* User.swift in Sources */,
-				B806023622C4C3940076BC19 /* V2EX_API.swift in Sources */,
 				B8009E1F22C3C38D001670B2 /* Themes.swift in Sources */,
 				B806023022C4AFA70076BC19 /* TopicDetailTableViewController.swift in Sources */,
 			);
