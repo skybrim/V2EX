@@ -13,7 +13,7 @@ import Moya
 let v2exUrlProvider = MoyaProvider<V2exUrl>()
 
 enum V2exUrl{
-    case topicList(tab: String?, page: Int) //获取首页列表
+    case topicList(tab: String?) //获取首页列表
     case favoriteList(page: Int) //获取我的收藏帖子列表
     case nodeTopicList(nodeName: String, page:Int) //获取节点主题列表
 }
@@ -24,8 +24,7 @@ extension V2exUrl: TargetType {
     var path: String {
         var rawPath = ""
         switch self {
-        case .topicList(let tab, let page):
-            if tab == "all" && page > 0 { rawPath = "/recent" }
+        case .topicList(_):
             rawPath = "/"
         case .favoriteList(_):
             rawPath = "/my/topics"
@@ -37,11 +36,7 @@ extension V2exUrl: TargetType {
     var task: Task {
         var parmeters: [String : Any] = [:]
         switch self {
-        case .topicList(let tab, let page):
-            if tab == "all" && page > 0 {
-                //只有全部分类能翻页
-                parmeters["p"] = page
-            }
+        case .topicList(let tab):
             parmeters["tab"] = tab ?? "all"
         case .favoriteList(let page):
             parmeters["p"] = page

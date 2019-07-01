@@ -89,6 +89,12 @@ class TopicListTableViewController: UITableViewController {
     }
     */
     
+    //MARK: - Network
+    
+    private func requestTopicList(tab: String) {
+        
+    }
+    
     // MARK: - Restore
     
     override func encodeRestorableState(with coder: NSCoder) {
@@ -109,7 +115,7 @@ class TopicListTableViewController: UITableViewController {
         didSet {
             title = NSLocalizedString(theme!, comment: theme!)
             //根据tab名称，请求数据。解析html
-            v2exUrlProvider.request(.topicList(tab: theme, page: 0)) { (result) in
+            v2exUrlProvider.request(.topicList(tab: theme)) { (result) in
                 switch result {
                 case .success(let response):
                     let jiDoc = Ji(htmlData: response.data)
@@ -128,5 +134,6 @@ class TopicListTableViewController: UITableViewController {
     }
     
     var topicList = TopicList()
+    
     
 }

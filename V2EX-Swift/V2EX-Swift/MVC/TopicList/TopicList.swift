@@ -20,14 +20,14 @@ struct TopicList {
 struct Topic {
     
     var topicId: String?
-    var avata: String?
+    var avatar: String?
     var nodeName: String?
     var userName: String?
     var topicTitle: String?
     
     init(_ topicNode: JiNode) {
         
-        self.avata = topicNode.xPath("./table/tr/td[1]/a[1]/img[@class='avatar']").first?["src"]
+        self.avatar = topicNode.xPath("./table/tr/td[1]/a[1]/img[@class='avatar']").first?["src"]
         self.topicTitle = topicNode.xPath("./table/tr/td[3]/span[1]/a[1]").first?.content
         self.userName = topicNode.xPath("./table/tr/td[3]/span[1]/strong[1]/a[1]").first?.content
     }
