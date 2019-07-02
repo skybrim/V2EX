@@ -48,7 +48,7 @@ extension V2exApi: TargetType {
         case .topicsShow(_):
             rawPath = "/api/topics/show.json"
         case .repliesShow(_, _, _):
-            rawPath = "/api/topics/show.json"
+            rawPath = "/api/replies/show.json"
         case .membersShow(_):
             rawPath = "/api/members/show.json"
         }

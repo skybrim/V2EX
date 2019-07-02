@@ -59,7 +59,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lK-Mr-8w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="-681"/>
+            <point key="canvasLocation" x="642" y="-738"/>
         </scene>
         <!--User Table View Controller-->
         <scene sceneID="bEx-YI-YN1">
@@ -107,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoP-aJ-VHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="-681"/>
+            <point key="canvasLocation" x="1354" y="-738"/>
         </scene>
         <!--Topic Detail Table View Controller-->
         <scene sceneID="9fL-p7-sMW">
@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UbC-BS-k7R">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Topic Reply Cell" id="UbC-BS-k7R">
                                 <rect key="frame" x="0.0" y="28" width="703.5" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UbC-BS-k7R" id="xuN-Ji-l5t">
@@ -132,10 +132,13 @@
                             <outlet property="delegate" destination="bUw-RB-GUE" id="y4h-y4-F9Z"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="topicDetailTableView" destination="asG-Rw-mau" id="2Vs-x2-60d"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ep-fc-Ks0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59" y="112"/>
+            <point key="canvasLocation" x="-28" y="56"/>
         </scene>
         <!--Topic List Table View Controller-->
         <scene sceneID="SM4-de-u7P">
@@ -185,7 +188,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VwI-0p-31a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="220"/>
+            <point key="canvasLocation" x="642" y="55"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="23S-CG-T1S">
@@ -202,7 +205,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGG-TG-X2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="-681"/>
+            <point key="canvasLocation" x="-28" y="-738"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="T5d-o5-dua">

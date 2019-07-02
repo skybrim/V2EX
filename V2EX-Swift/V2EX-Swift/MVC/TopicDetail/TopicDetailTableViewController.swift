@@ -12,23 +12,16 @@ class TopicDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .done, target: nil, action: nil)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 0
     }
 
@@ -89,21 +82,37 @@ class TopicDetailTableViewController: UITableViewController {
 
     //MARK: - Network
     
+    /// 获取主题信息
     private func requestTopicDetail() {
         v2exApiProvider.request(.topicsShow(id: topicID!)) { (result) in
             switch result {
             case .success(let response):
-                print(String(data: response.data, encoding: .utf8))
+                print(String(data: response.data, encoding: .utf8) ?? "topic detail none")
             case .failure(let error):
                 print(error)
             }
         }
     }
     
-    var topicID: String? {
-        didSet {
-            requestTopicDetail()
+    private func requestReplies() {
+        v2exApiProvider.request(.repliesShow(topic_id: topicID!, page: 0, page_size: 20)) { (result) in
+            switch result {
+            case .success(let response):
+                print(String(data: response.data, encoding: .utf8) ?? "topic reply none")
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
+    //MARK: - property
+    
+    var topicID: String? {
+        didSet {
+            requestTopicDetail()
+            requestReplies()
+        }
+    }
+    
+    @IBOutlet var topicDetailTableView: UITableView!
 }
