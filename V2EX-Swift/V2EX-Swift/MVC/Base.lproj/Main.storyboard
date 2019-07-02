@@ -72,9 +72,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="V2EX" id="BTL-Ob-AWX"/>
-                    <connections>
-                        <outlet property="themesTableView" destination="fEm-vw-K7m" id="R28-Rc-mOj"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lK-Mr-8w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

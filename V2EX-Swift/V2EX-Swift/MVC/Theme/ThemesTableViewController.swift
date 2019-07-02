@@ -88,9 +88,5 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
     // MARK: - Property
     
     var themes = Themes()
-    
-    @IBOutlet var themesTableView: UITableView! {
-        didSet {
-        }
-    }
+
 }
