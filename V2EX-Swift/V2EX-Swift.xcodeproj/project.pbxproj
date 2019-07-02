@@ -68,13 +68,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B8009E2022C3C723001670B2 /* Nodes */ = {
+		B8009E2022C3C723001670B2 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
 				B829713222C3684B00D8E756 /* ThemesTableViewController.swift */,
 				B8009E1E22C3C38D001670B2 /* Themes.swift */,
 			);
-			path = Nodes;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		B8009E2122C3C736001670B2 /* TopicList */ = {
@@ -86,13 +86,13 @@
 			path = TopicList;
 			sourceTree = "<group>";
 		};
-		B806022922C4ABF30076BC19 /* Account */ = {
+		B806022922C4ABF30076BC19 /* User */ = {
 			isa = PBXGroup;
 			children = (
 				B806022A22C4AC190076BC19 /* UserTableViewController.swift */,
 				B8F2650622C9B64E00ABC9D4 /* User.swift */,
 			);
-			path = Account;
+			path = User;
 			sourceTree = "<group>";
 		};
 		B806022E22C4AF8D0076BC19 /* TopicDetail */ = {
@@ -116,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				B806022E22C4AF8D0076BC19 /* TopicDetail */,
-				B806022922C4ABF30076BC19 /* Account */,
-				B8009E2022C3C723001670B2 /* Nodes */,
+				B806022922C4ABF30076BC19 /* User */,
+				B8009E2022C3C723001670B2 /* Theme */,
 				B8009E2122C3C736001670B2 /* TopicList */,
 				B829711022C35DD800D8E756 /* Main.storyboard */,
 			);
