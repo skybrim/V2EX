@@ -39,7 +39,7 @@ class TopicListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Cell", for: indexPath)
         cell.imageView?.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
         cell.textLabel?.text = topic.topicTitle
-        cell.detailTextLabel?.text = topic.nodeName! + " • " + topic.userName!
+        cell.detailTextLabel?.text = topic.topicSubTitle
         return cell
     }
     
