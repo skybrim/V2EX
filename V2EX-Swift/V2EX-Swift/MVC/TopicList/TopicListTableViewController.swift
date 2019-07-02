@@ -37,8 +37,9 @@ class TopicListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let topic = topicList.topics[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Cell", for: indexPath)
-        cell.imageView!.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
+        cell.imageView?.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
         cell.textLabel?.text = topic.topicTitle
+        cell.detailTextLabel?.text = topic.nodeName! + " • " + topic.userName!
         return cell
     }
     
@@ -101,7 +102,7 @@ class TopicListTableViewController: UITableViewController {
             switch result {
             case .success(let response):
                 let jiDoc = Ji(htmlData: response.data)
-                if let topicListRootNode = jiDoc? .xPath("//body/div[@id='Wrapper']/div[@class='content']/div[@id='Main']/div[@class='box']/div[@class='cell item']") {
+                if let topicListRootNode = jiDoc? .xPath("//body/div[@id='Wrapper']/div[@class='content']/div[@id='Main']/div[2]/div[@class='cell item']") {
                     for topicNode in topicListRootNode {
                         let topic = Topic(topicNode)
                         self.topicList.topics.append(topic)
