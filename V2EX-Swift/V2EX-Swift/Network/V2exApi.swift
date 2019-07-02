@@ -20,7 +20,7 @@ enum V2exApi{
     
     case topicsHot
     case topicsLatest
-    case topicsShow(username: String, node_id: String, node_name: String)
+    case topicsShow(id: String)
     
     case repliesShow(topic_id: String, page: Int, page_size: Int)
     
@@ -45,7 +45,7 @@ extension V2exApi: TargetType {
             rawPath = "/api/topics/latest.json"
         case .topicsHot:
             rawPath = "/api/topics/hot.json"
-        case .topicsShow(_, _, _):
+        case .topicsShow(_):
             rawPath = "/api/topics/show.json"
         case .repliesShow(_, _, _):
             rawPath = "/api/topics/show.json"
@@ -60,10 +60,8 @@ extension V2exApi: TargetType {
         case .nodesShow(let id, let name):
             parmeters["id"] = id
             parmeters["name"] = name
-        case .topicsShow(let username, let node_id, let node_name):
-            parmeters["username"] = username
-            parmeters["node_id"] = node_id
-            parmeters["node_name"] = node_name
+        case .topicsShow(let id):
+            parmeters["id"] = id
         case .repliesShow(let topic_id, let page, let page_size):
             parmeters["topic_id"] = topic_id
             parmeters["page"] = page

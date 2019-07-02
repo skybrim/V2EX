@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class ThemesTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
@@ -22,7 +23,7 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
         if segue.identifier == "Show Post List" {
             if let destination = segue.destination as? TopicListTableViewController,
                 let cell = sender as? UITableViewCell,
-                let indexPath = themesTableView.indexPath(for: cell) {
+                let indexPath = tableView.indexPath(for: cell) {
                 destination.theme = themes.themeInfo[indexPath.row]
             }
         } else if segue.identifier == "Show Account Info" {

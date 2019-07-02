@@ -3,6 +3,7 @@ PODS:
   - GDPerformanceView-Swift (2.0.2)
   - Ji (5.0.0)
   - Kingfisher (5.6.0)
+  - MJRefresh (3.2.0)
   - MonkeyKing (1.15.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - GDPerformanceView-Swift
   - Ji
   - Kingfisher
+  - MJRefresh
   - MonkeyKing
   - Moya
   - SnapKit
@@ -26,6 +28,7 @@ SPEC REPOS:
     - GDPerformanceView-Swift
     - Ji
     - Kingfisher
+    - MJRefresh
     - MonkeyKing
     - Moya
     - Result
@@ -36,11 +39,12 @@ SPEC CHECKSUMS:
   GDPerformanceView-Swift: a40b2f675589449f5b5082f3178f01bfdb7882ce
   Ji: d795fed288fe78658b404c88946d753b17d8d7f4
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MonkeyKing: 2bec76a578c8bd089703e70e20eb44e265bd2e67
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: d3f4b12683758cec6115d6dd606ef2d8501f2a07
+PODFILE CHECKSUM: 1059381f0dfec8927230679d0f07bbda906bc345
 
 COCOAPODS: 1.7.2

@@ -9,7 +9,8 @@ pod 'Moya'
 pod 'Ji'
 pod 'Kingfisher'
 pod 'SnapKit'
-pod 'MonkeyKing'
 pod 'GDPerformanceView-Swift', :configurations => ['Debug']
+pod 'MJRefresh'
+pod 'MonkeyKing'
 
 end

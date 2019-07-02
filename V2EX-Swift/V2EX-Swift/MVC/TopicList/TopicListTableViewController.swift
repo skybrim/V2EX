@@ -9,6 +9,7 @@
 import UIKit
 import Moya
 import Kingfisher
+import MJRefresh
 
 class TopicListTableViewController: UITableViewController {
 
@@ -16,6 +17,20 @@ class TopicListTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    //MARK: - UIStoryboardSegue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "Show Post Detail" {
+            if let destination = segue.destination as? TopicDetailTableViewController,
+                let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell) {
+                let topic = topicList.topics[indexPath.row]
+                destination.topicID = topic.topicID
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,8 +50,10 @@ class TopicListTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    //MARK: - private
+    private func updateUI() {
+        self.tableView.reloadData()
+        self.tableView.mj_header.endRefreshing()
     }
 
     //MARK: - Network
@@ -44,7 +61,7 @@ class TopicListTableViewController: UITableViewController {
     /// 根据tab名称，请求数据，并解析html
     ///
     /// - Parameter tab: theme
-    private func requestTopicList(tab: String) {
+    @objc private func requestTopicList() {
         v2exUrlProvider.request(.topicList(tab: theme)) { (result) in
             switch result {
             case .success(let response):
@@ -55,7 +72,7 @@ class TopicListTableViewController: UITableViewController {
                         self.topicList.topics.append(topic)
                     }
                 }
-                self.tableView.reloadData()
+                self.updateUI()
             case .failure(let error):
                 print(error)
             }
@@ -81,9 +98,17 @@ class TopicListTableViewController: UITableViewController {
     var theme: String? {
         didSet {
             title = NSLocalizedString(theme!, comment: theme!)
-            requestTopicList(tab: theme!)
         }
     }
     
     var topicList = TopicList()
+    
+    @IBOutlet var topicListTableView: UITableView! {
+        didSet {
+            let header = MJRefreshNormalHeader()
+            header.setRefreshingTarget(self, refreshingAction: #selector(self.requestTopicList))
+            topicListTableView.mj_header = header
+            topicListTableView.mj_header.beginRefreshing()
+        }
+    }
 }

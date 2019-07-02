@@ -87,4 +87,23 @@ class TopicDetailTableViewController: UITableViewController {
     }
     */
 
+    //MARK: - Network
+    
+    private func requestTopicDetail() {
+        v2exApiProvider.request(.topicsShow(id: topicID!)) { (result) in
+            switch result {
+            case .success(let response):
+                print(String(data: response.data, encoding: .utf8))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    var topicID: String? {
+        didSet {
+            requestTopicDetail()
+        }
+    }
+    
 }
