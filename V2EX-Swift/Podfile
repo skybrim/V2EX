@@ -6,10 +6,10 @@ inhibit_all_warnings!
 target 'V2EX-Swift' do
 
 pod 'Moya'
-#pod 'HandyJSON'
 pod 'Ji'
 pod 'Kingfisher'
 pod 'SnapKit'
 pod 'MonkeyKing'
+pod 'GDPerformanceView-Swift', :configurations => ['Debug']
 
 end

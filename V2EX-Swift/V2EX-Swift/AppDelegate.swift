@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if DEBUG
+import GDPerformanceView_Swift
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -40,6 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        #if DEBUG
+        PerformanceMonitor.shared().start()
+        #endif
         let splitViewController = window!.rootViewController as! UISplitViewController
         splitViewController.delegate = self
         splitViewController.preferredDisplayMode = .allVisible

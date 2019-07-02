@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import Kingfisher
 
 class TopicListTableViewController: UITableViewController {
 
@@ -34,10 +35,11 @@ class TopicListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let topicCell = tableView.dequeueReusableCell(withIdentifier: "Topic Cell", for: indexPath)
         let topic = topicList.topics[indexPath.row]
-        topicCell.textLabel?.text = topic.topicTitle
-        return topicCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Cell", for: indexPath)
+        cell.imageView!.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
+        cell.textLabel?.text = topic.topicTitle
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -91,8 +93,25 @@ class TopicListTableViewController: UITableViewController {
     
     //MARK: - Network
     
+    /// 根据tab名称，请求数据。解析html
+    ///
+    /// - Parameter tab: theme
     private func requestTopicList(tab: String) {
-        
+        v2exUrlProvider.request(.topicList(tab: theme)) { (result) in
+            switch result {
+            case .success(let response):
+                let jiDoc = Ji(htmlData: response.data)
+                if let topicListRootNode = jiDoc? .xPath("//body/div[@id='Wrapper']/div[@class='content']/div[@id='Main']/div[@class='box']/div[@class='cell item']") {
+                    for topicNode in topicListRootNode {
+                        let topic = Topic(topicNode)
+                        self.topicList.topics.append(topic)
+                    }
+                }
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     // MARK: - Restore
@@ -114,26 +133,17 @@ class TopicListTableViewController: UITableViewController {
     var theme: String? {
         didSet {
             title = NSLocalizedString(theme!, comment: theme!)
-            //根据tab名称，请求数据。解析html
-            v2exUrlProvider.request(.topicList(tab: theme)) { (result) in
-                switch result {
-                case .success(let response):
-                    let jiDoc = Ji(htmlData: response.data)
-                    if let topicListRootNode = jiDoc? .xPath("//body/div[@id='Wrapper']/div[@class='content']/div[@id='Main']/div[@class='box']/div[@class='cell item']") {
-                        for topicNode in topicListRootNode {
-                            let topic = Topic(topicNode)
-                            self.topicList.topics.append(topic)
-                        }
-                    }
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    print(error)
-                }
-            }
+            requestTopicList(tab: theme!)
         }
     }
     
     var topicList = TopicList()
     
-    
+    @IBOutlet var topicListTableView: UITableView! {
+        didSet {
+//            topicListTableView.register(TopicListTableViewCell.self, forCellReuseIdentifier: "Topic Cell")
+//            topicListTableView.rowHeight = UITableView.automaticDimension
+//            topicListTableView.estimatedRowHeight = 70
+        }
+    }
 }

@@ -1,6 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-V2EX-Swift/Pods-V2EX-Swift-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework
 ${BUILT_PRODUCTS_DIR}/Ji/Ji.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework

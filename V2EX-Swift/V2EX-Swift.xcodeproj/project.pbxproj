@@ -22,7 +22,6 @@
 		B8F2650922C9D57200ABC9D4 /* V2exUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650822C9D57200ABC9D4 /* V2exUrl.swift */; };
 		B8F2650B22C9D57F00ABC9D4 /* V2exApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650A22C9D57F00ABC9D4 /* V2exApi.swift */; };
 		B8F2650D22C9F27D00ABC9D4 /* TopicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650C22C9F27D00ABC9D4 /* TopicList.swift */; };
-		B8F2650F22CA028B00ABC9D4 /* TopicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650E22CA028B00ABC9D4 /* TopicListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +45,6 @@
 		B8F2650822C9D57200ABC9D4 /* V2exUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exUrl.swift; sourceTree = "<group>"; };
 		B8F2650A22C9D57F00ABC9D4 /* V2exApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exApi.swift; sourceTree = "<group>"; };
 		B8F2650C22C9F27D00ABC9D4 /* TopicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicList.swift; sourceTree = "<group>"; };
-		B8F2650E22CA028B00ABC9D4 /* TopicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListTableViewCell.swift; sourceTree = "<group>"; };
 		D41C306E7E3A0F765CD31B57 /* Pods-V2EX-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX-Swift.debug.xcconfig"; path = "Target Support Files/Pods-V2EX-Swift/Pods-V2EX-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +82,6 @@
 			children = (
 				B8009E1C22C3C177001670B2 /* TopicListTableViewController.swift */,
 				B8F2650C22C9F27D00ABC9D4 /* TopicList.swift */,
-				B8F2650E22CA028B00ABC9D4 /* TopicListTableViewCell.swift */,
 			);
 			path = TopicList;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 				B806022B22C4AC190076BC19 /* UserTableViewController.swift in Sources */,
 				B8009E1D22C3C177001670B2 /* TopicListTableViewController.swift in Sources */,
 				B8F2650D22C9F27D00ABC9D4 /* TopicList.swift in Sources */,
-				B8F2650F22CA028B00ABC9D4 /* TopicListTableViewCell.swift in Sources */,
 				B8F2650922C9D57200ABC9D4 /* V2exUrl.swift in Sources */,
 				B829713322C3684B00D8E756 /* ThemesTableViewController.swift in Sources */,
 				B8F2650B22C9D57F00ABC9D4 /* V2exApi.swift in Sources */,
@@ -470,6 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skybrim.V2EX-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
