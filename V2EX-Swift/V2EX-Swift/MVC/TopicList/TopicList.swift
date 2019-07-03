@@ -20,21 +20,23 @@ struct TopicList {
 struct Topic {
     
     var avatar: String?
-    var topicTitle: String?
-    var topicSubTitle: String?
+    var topicID: String?
     var nodeName: String?
     var userName: String?
     var replyCount: String?
-    var topicID: String?
+    var topicTitle: String?
+    var topicDetail: String?
+    
     init(_ topicNode: JiNode) {
+        
         self.avatar = topicNode.xPath("./table/tr/td[1]/a[1]/img[@class='avatar']").first?["src"]
-        self.topicSubTitle = topicNode.xPath("./table/tr/td[3]/span[@class='topic_info']").first?.content
         self.nodeName = topicNode.xPath("./table/tr/td[3]/span[@class='topic_info']/a[@class='node']").first?.content
         self.userName = topicNode.xPath("./table/tr/td[3]/span[@class='topic_info']/strong[1]/a[1]").first?.content
         self.replyCount = topicNode.xPath("./table/tr/td[4]/a[@class='count_livid']").first?.content
-        
+        //标题
         let titleNode = topicNode.xPath("./table/tr/td[3]/span[@class='item_title']/a[1]").first
         self.topicTitle = titleNode?.content
+        //topic ID
         var topicIdUrl = titleNode?["href"];
         if var id = topicIdUrl {
             if let range = id.range(of: "/t/") {
@@ -45,5 +47,13 @@ struct Topic {
             }
         }
         self.topicID = topicIdUrl
+        //详情
+        if let detailString = topicNode.xPath("./table/tr/td[3]/span[@class='topic_info']").first?.content {
+            if let tmpDetail = detailString.components(separatedBy: self.userName!).last,
+                tmpDetail.hasPrefix("  •  ") {
+                self.topicDetail = String(tmpDetail.suffix(tmpDetail.count - 5))
+            }
+        }
+        
     }
 }
