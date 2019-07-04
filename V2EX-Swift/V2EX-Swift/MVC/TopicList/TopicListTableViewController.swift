@@ -21,7 +21,7 @@ class TopicListTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "Show Post Detail" {
+        if segue.identifier == "Show Topic Detail" {
             if let destination = segue.destination as? TopicDetailTableViewController,
                 let cell = sender as? UITableViewCell,
                 let indexPath = tableView.indexPath(for: cell) {
@@ -42,11 +42,15 @@ class TopicListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let topic = topicList.topics[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Cell", for: indexPath)
-        cell.imageView?.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
-        cell.textLabel?.text = topic.topicTitle
-        cell.detailTextLabel?.text = topic.topicDetail
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic List Cell", for: indexPath)
+        if let topicCell = cell as? TopicListTableViewCell {
+            let topic = topicList.topics[indexPath.row]
+            topicCell.avatarImageView.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
+            topicCell.userLabel.text = topic.userName
+            topicCell.detailLabel.text = topic.topicDetail
+            topicCell.nodeLabel.text = topic.nodeName
+            topicCell.titleLabel.text = topic.topicTitle
+        }
         return cell
     }
     
@@ -105,11 +109,18 @@ class TopicListTableViewController: UITableViewController {
     
     @IBOutlet var topicListTableView: UITableView! {
         didSet {
+            //注册cell
+            topicListTableView.register(TopicListTableViewCell.self, forCellReuseIdentifier: "Topic List Cell")
             //下拉刷新
             let header = MJRefreshNormalHeader()
             header.setRefreshingTarget(self, refreshingAction: #selector(self.requestTopicList))
             topicListTableView.mj_header = header
             topicListTableView.mj_header.beginRefreshing()
+            //分割线全屏的方法，还有一部分在cell里面
+            //1.调整(iOS7以上)表格分隔线边距
+            if topicListTableView.responds(to: #selector(setter: UITableView.separatorInset)) {
+                topicListTableView.separatorInset = UIEdgeInsets.zero
+            }
         }
     }
 }

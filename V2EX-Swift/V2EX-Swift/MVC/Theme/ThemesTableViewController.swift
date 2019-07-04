@@ -20,7 +20,7 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "Show Post List" {
+        if segue.identifier == "Show Topic List" {
             if let destination = segue.destination as? TopicListTableViewController,
                 let cell = sender as? UITableViewCell,
                 let indexPath = tableView.indexPath(for: cell) {
