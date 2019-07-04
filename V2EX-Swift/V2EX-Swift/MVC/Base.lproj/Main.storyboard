@@ -36,9 +36,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="HRN-Ut-BqJ" kind="showDetail" id="XSG-c6-rJf"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Navigation Cell" id="LTg-iS-Iwj">
                                 <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
@@ -60,54 +57,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lK-Mr-8w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="-738"/>
-        </scene>
-        <!--User Table View Controller-->
-        <scene sceneID="bEx-YI-YN1">
-            <objects>
-                <tableViewController id="HRN-Ut-BqJ" customClass="UserTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e3D-fd-4O0">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="K5v-n3-Hlp">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="th6-3x-Jj0">
-                                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="th6-3x-Jj0" id="hd7-Xg-6FF">
-                                            <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8fh-Dn-gfO">
-                                        <rect key="frame" x="0.0" y="44" width="703.5" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8fh-Dn-gfO" id="2Iu-pM-27F">
-                                            <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6pS-rC-4cp">
-                                        <rect key="frame" x="0.0" y="88" width="703.5" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6pS-rC-4cp" id="LyV-Yj-IJb">
-                                            <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="HRN-Ut-BqJ" id="h8U-Qc-odx"/>
-                            <outlet property="delegate" destination="HRN-Ut-BqJ" id="GVB-Dr-TYV"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EoP-aJ-VHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1354" y="-738"/>
         </scene>
         <!--Topic Detail Table View Controller-->
         <scene sceneID="9fL-p7-sMW">
@@ -157,7 +106,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="bUw-RB-GUE" kind="showDetail" identifier="Show Topic Detail" id="fuS-xb-WyE"/>
+                                    <segue destination="bUw-RB-GUE" kind="showDetail" identifier="Show Topic Detail" id="3Yd-lY-Fag"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -206,6 +155,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fuS-xb-WyE"/>
+        <segue reference="3Yd-lY-Fag"/>
     </inferredMetricsTieBreakers>
 </document>

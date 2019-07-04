@@ -15,10 +15,10 @@ class TopicListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .done, target: nil, action: nil)
     }
 
     //MARK: - UIStoryboardSegue
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "Show Topic Detail" {
@@ -52,6 +52,10 @@ class TopicListTableViewController: UITableViewController {
             topicCell.titleLabel.text = topic.topicTitle
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "Show Topic Detail", sender: tableView.cellForRow(at: indexPath))
     }
     
     //MARK: - private

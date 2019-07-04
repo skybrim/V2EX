@@ -87,7 +87,7 @@ class TopicListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .caption1)
         label.textColor = UIColor.init(hex: TextGray)
         return label
     }()
@@ -105,6 +105,7 @@ class TopicListTableViewCell: UITableViewCell {
     
     var titleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.textColor = UIColor.init(hex: TextBlack)
