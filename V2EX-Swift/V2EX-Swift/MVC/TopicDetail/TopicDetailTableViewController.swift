@@ -96,12 +96,12 @@ class TopicDetailTableViewController: UITableViewController {
     
     private func requestReplies() {
         v2exApiProvider.request(.repliesShow(topic_id: topicID!, page: 0, page_size: 20)) { (result) in
-//            switch result {
-//            case .success(let response):
-//                print(String(data: response.data, encoding: .utf8) ?? "topic reply none")
-//            case .failure(let error):
-//                print(error)
-//            }
+            switch result {
+            case .success(let response):
+                self.replies = try? JSONDecoder().decode([Reply].self, from: response.data)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
@@ -115,6 +115,9 @@ class TopicDetailTableViewController: UITableViewController {
     }
     
     var topicDetails: [TopicDetail]?
+    
+    var replies: [Reply]?
+    
     
     @IBOutlet var topicDetailTableView: UITableView! {
         didSet {

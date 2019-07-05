@@ -13,7 +13,7 @@ struct TopicDetail: Codable {
     var url: String?
     var node: TopicDetailNode?
     var title: String?
-    var member: TopicDetailMember?
+    var member: Member?
     var replies: Int?
     var created: Int?
     var content: String?
@@ -72,7 +72,7 @@ struct TopicDetailNode: Codable {
     }
 }
 
-struct TopicDetailMember: Codable {
+struct Member: Codable {
     var id: Int?
     var url: String?
     var psn: String?
@@ -108,6 +108,25 @@ struct TopicDetailMember: Codable {
     }
 }
 
-struct Reply {
+struct Reply: Codable {
+    var id: Int?
+    var member: Member?
+    var created: Int?
+    var topicId: Int?
+    var content: String?
+    var memberId: Int?
+    var contentRendered: String?
+    var lastModified: Int?
     
+    enum CodingKeys: String, CodingKey {
+        case id
+        case member
+        case created
+        case topicId = "topic_id"
+        case content
+        case memberId = "member_id"
+        case lastModified = "last_modified"
+        case contentRendered = "content_rendered"
+    }
 }
+
