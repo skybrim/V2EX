@@ -67,10 +67,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Topic Reply Cell" id="UbC-BS-k7R">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Topic List Cell" id="UbC-BS-k7R" customClass="TopicListTableViewCell" customModule="V2EX_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="703.5" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UbC-BS-k7R" id="xuN-Ji-l5t">
+                                    <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Topic MD Cell" id="xay-TB-IlW" customClass="TopicMDTableViewCell" customModule="V2EX_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="703.5" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xay-TB-IlW" id="0Kh-4o-N2F">
+                                    <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Topic Reply Cell" id="yIX-Fr-2wx" customClass="TopicReplyTableViewCell" customModule="V2EX_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="703.5" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yIX-Fr-2wx" id="AGy-9F-jwK">
                                     <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>

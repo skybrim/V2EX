@@ -1,5 +1,5 @@
 //
-//  ReplyTableViewCell.swift
+//  TopicReplyTableViewCell.swift
 //  V2EX-Swift
 //
 //  Created by Wiley on 2019/7/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReplyTableViewCell: UITableViewCell {
+class TopicReplyTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

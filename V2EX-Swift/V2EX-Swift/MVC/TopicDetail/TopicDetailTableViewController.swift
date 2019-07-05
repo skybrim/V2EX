@@ -17,22 +17,45 @@ class TopicDetailTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if section == 0 {
+            return 2
+        }
+        return 10
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Topic List Cell", for: indexPath)
+//                if let topicListCell = cell as? TopicListTableViewCell {
+//                    topicListCell
+//                    return topicListCell
+//                }
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Topic MD Cell", for: indexPath)
+                if let mdCell = cell as? TopicMDTableViewCell,
+                    let topicDetail = topicDetails?.first {
+                    mdCell.mdView.load(markdown: topicDetail.content)
+                }
+                return cell
+            }
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Reply Cell", for: indexPath)
+            cell.textLabel?.text = String(indexPath.row)
+            return cell
+        default:
+            return UITableViewCell()
+        }
 
-        // Configure the cell...
-
-        return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,6 +110,7 @@ class TopicDetailTableViewController: UITableViewController {
             switch result {
             case .success(let response):
                 self.topicDetails = try? JSONDecoder().decode([TopicDetail].self, from: response.data)
+                self.topicDetailTableView.reloadSections(IndexSet(integer: 0), with: UITableView.RowAnimation.automatic)
             case .failure(let error):
                 print(error)
             }
@@ -110,8 +134,6 @@ class TopicDetailTableViewController: UITableViewController {
         didSet {
             requestTopicDetail()
             requestReplies()
-            
-            
         }
     }
     
@@ -121,7 +143,10 @@ class TopicDetailTableViewController: UITableViewController {
     
     @IBOutlet var topicDetailTableView: UITableView! {
         didSet {
-            
+            topicDetailTableView.register(TopicListTableViewCell.self, forCellReuseIdentifier: "Topic List Cell")
+            topicDetailTableView.register(TopicMDTableViewCell.self, forCellReuseIdentifier: "Topic MD Cell")
+            topicDetailTableView.register(TopicReplyTableViewCell.self, forCellReuseIdentifier: "Topic Reply Cell")
+            topicDetailTableView.tableFooterView = UIView()
         }
     }
 }
