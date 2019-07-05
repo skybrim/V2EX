@@ -12,7 +12,6 @@ class TopicDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .done, target: nil, action: nil)
     }
 
     // MARK: - Table view data source
@@ -111,13 +110,14 @@ class TopicDetailTableViewController: UITableViewController {
         didSet {
             requestTopicDetail()
             requestReplies()
+            
+            
         }
     }
     
     var topicDetails: [TopicDetail]?
     
     var replies: [Reply]?
-    
     
     @IBOutlet var topicDetailTableView: UITableView! {
         didSet {

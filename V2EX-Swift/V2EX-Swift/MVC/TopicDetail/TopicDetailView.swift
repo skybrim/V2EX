@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MarkdownView
 
 class TopicDetailView: UIView {
 

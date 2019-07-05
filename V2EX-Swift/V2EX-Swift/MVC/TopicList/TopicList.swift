@@ -51,7 +51,7 @@ struct Topic {
         if let detailString = topicNode.xPath("./table/tr/td[3]/span[@class='topic_info']").first?.content {
             if let tmpDetail = detailString.components(separatedBy: self.userName!).last,
                 tmpDetail.hasPrefix("  •  ") {
-                self.topicDetail = String(tmpDetail.suffix(tmpDetail.count - 5))
+                self.topicDetail = String(tmpDetail.suffix(tmpDetail.count - 5) + "  •  \(self.replyCount ?? "0")")
             }
         }
         
