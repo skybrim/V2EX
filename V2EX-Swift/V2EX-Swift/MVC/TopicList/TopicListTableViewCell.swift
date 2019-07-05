@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+@IBDesignable
 class TopicListTableViewCell: UITableViewCell {
 
     //MARK: - init
