@@ -33,12 +33,14 @@ class TopicListTableViewCell: UITableViewCell {
         if self.responds(to: #selector(setter: layoutMargins)) {
             self.layoutMargins = UIEdgeInsets.zero
         }
+        
         //添加子视图
         contentView.addSubview(avatarImageView)
         contentView.addSubview(userLabel)
         contentView.addSubview(detailLabel)
         contentView.addSubview(nodeLabel)
         contentView.addSubview(titleLabel)
+        
         //添加固定约束
         avatarImageView.snp.makeConstraints { (make) in
             make.left.top.equalTo(10)
@@ -93,7 +95,7 @@ class TopicListTableViewCell: UITableViewCell {
     
     var nodeLabel: UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 1.5
+        label.layer.cornerRadius = 3.0
         label.clipsToBounds = true
         label.backgroundColor = UIColor(hex: "#f5f5f5")
         label.adjustsFontForContentSizeCategory = true

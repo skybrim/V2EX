@@ -45,6 +45,12 @@ struct Topic {
         }
     }
     
+    var avatarUrl: URL? {
+        get {
+            return URL(string: String("http:" + (avatar ?? "")) )
+        }
+    }
+    
     var avatar: String?
     var topicID: String?
     var nodeName: String?

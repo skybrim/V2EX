@@ -12,6 +12,7 @@ import UIKit
 public let TextBlack = "#333333"
 public let TextDarkGray = "#666666"
 public let TextGray = "#999999"
+public let lineGray = "#f5f5f5"
 
 extension CGFloat {
     public static var screenWidth: CGFloat {
@@ -75,7 +76,7 @@ extension UIColor {
 
 extension UIView {
     //画线
-    private func drawBorder(rect:CGRect,color:UIColor){
+    private func drawBorder(rect: CGRect, color: UIColor){
         let line = UIBezierPath(rect: rect)
         let lineShape = CAShapeLayer()
         lineShape.path = line.cgPath
@@ -84,25 +85,25 @@ extension UIView {
     }
     
     //设置右边框
-    public func rightBorder(width:CGFloat,borderColor:UIColor){
+    public func rightBorder(width: CGFloat, borderColor: UIColor){
         let rect = CGRect(x: 0, y: self.frame.size.width - width, width: width, height: self.frame.size.height)
         drawBorder(rect: rect, color: borderColor)
     }
     
     //设置左边框
-    public func leftBorder(width:CGFloat,borderColor:UIColor){
+    public func leftBorder(width: CGFloat, borderColor: UIColor){
         let rect = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
         drawBorder(rect: rect, color: borderColor)
     }
     
     //设置上边框
-    public func topBorder(width:CGFloat,borderColor:UIColor){
+    public func topBorder(width: CGFloat, borderColor: UIColor){
         let rect = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
         drawBorder(rect: rect, color: borderColor)
     }
     
     //设置底边框
-    public func buttomBorder(width:CGFloat,borderColor:UIColor){
+    public func bottomBorder(width: CGFloat, borderColor: UIColor){
         let rect = CGRect(x: 0, y: self.frame.size.height-width, width: self.frame.size.width, height: width)
         drawBorder(rect: rect, color: borderColor)
     }

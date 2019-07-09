@@ -9,6 +9,19 @@
 import Foundation
 
 struct TopicDetail: Codable {
+    var createdFormat: String? {
+        get {
+            let time = Int(Date().timeIntervalSince1970 * 1000) - created!
+            if (time / 60) < 60 {
+                return String("\(time / 60)" + "分钟前")
+            } else if (time / 3600) < 24{
+                return String("\(time / 3600)" + "小时前")
+            } else {
+                return String("\(time / (3600 * 24))" + "天前")
+            }
+        }
+    }
+    
     var id: Int?
     var url: String?
     var node: TopicDetailNode?
@@ -73,6 +86,12 @@ struct TopicDetailNode: Codable {
 }
 
 struct Member: Codable {
+    var avatarUrl: URL? {
+        get {
+            return URL(string: String("http:" + (avatarNormal ?? "")))
+        }
+    }
+    
     var id: Int?
     var url: String?
     var psn: String?
@@ -88,7 +107,7 @@ struct Member: Codable {
     var avatarMini: String?
     var avatarLarge: String?
     var avatarNormal: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case url
@@ -109,15 +128,28 @@ struct Member: Codable {
 }
 
 struct Reply: Codable {
+    var createdFormat: String? {
+        get {
+            let time = Int(Date().timeIntervalSince1970 * 1000) - created!
+            if (time / 60) < 60 {
+                return String("\(time / 60)" + "分钟前")
+            } else if (time / 3600) < 24{
+                return String("\(time / 3600)" + "小时前")
+            } else {
+                return String("\(time / (3600 * 24))" + "天前")
+            }
+        }
+    }
+    
     var id: Int?
     var member: Member?
     var created: Int?
     var topicId: Int?
     var content: String?
     var memberId: Int?
-    var contentRendered: String?
     var lastModified: Int?
-    
+    var contentRendered: String?
+
     enum CodingKeys: String, CodingKey {
         case id
         case member

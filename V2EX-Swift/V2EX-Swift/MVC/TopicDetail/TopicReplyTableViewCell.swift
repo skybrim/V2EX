@@ -31,9 +31,87 @@ class TopicReplyTableViewCell: UITableViewCell {
         if self.responds(to: #selector(setter: layoutMargins)) {
             self.layoutMargins = UIEdgeInsets.zero
         }
+        
+        //添加子视图
+        contentView.addSubview(avatarImageView)
+        contentView.addSubview(userLabel)
+        contentView.addSubview(tagLabel)
+        contentView.addSubview(timeLabel)
+        contentView.addSubview(contentLabel)
+        
+        //添加约束
+        avatarImageView.snp.makeConstraints { (make) in
+            make.left.top.equalTo(10)
+            make.size.equalTo(CGSize(width: 48, height: 48))
+        }
+        userLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
+            make.left.equalTo(avatarImageView.snp.right).offset(10)
+        }
+        tagLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(userLabel.snp.right).offset(5)
+            make.centerY.equalTo(userLabel.snp.centerY)
+        }
+        timeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(userLabel.snp.bottom).offset(5)
+            make.left.equalTo(avatarImageView.snp.right).offset(10)
+        }
+        contentLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(avatarImageView.snp.bottom).offset(10)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.bottom.equalTo(-10)
+        }
     }
     
-    //MARK: - private property
+    //MARK: - property
+    
+    var avatarImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = 5.0
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    var userLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.textColor = UIColor.init(hex: TextDarkGray)
+        return label
+    }()
+    
+    var tagLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.textColor = UIColor.init(hex: TextDarkGray)
+        label.text = "楼主"
+        label.layer.borderColor = UIColor.init(hex: TextDarkGray)?.cgColor
+        label.layer.borderWidth = 0.5
+        label.layer.cornerRadius = 3.0
+        return label
+    }()
+    
+    var timeLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.textColor = UIColor.init(hex: TextGray)
+        return label
+    }()
+    
+    var contentLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.textColor = UIColor.init(hex: TextBlack)
+        return label
+    }()
     
     //MARK: -
     

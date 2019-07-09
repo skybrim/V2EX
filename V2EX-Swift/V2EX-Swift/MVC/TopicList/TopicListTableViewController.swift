@@ -45,7 +45,7 @@ class TopicListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Topic List Cell", for: indexPath)
         if let topicCell = cell as? TopicListTableViewCell {
             let topic = topicList.topics[indexPath.row]
-            topicCell.avatarImageView.kf.setImage(with: URL(string: topic.avatar == nil ? "url" : "http:" + topic.avatar!), placeholder: UIImage(named: "placeholder"))
+            topicCell.avatarImageView.kf.setImage(with: topic.avatarUrl, placeholder: UIImage(named: "placeholder"))
             topicCell.userLabel.text = topic.userName
             topicCell.detailLabel.text = topic.topicDetail
             topicCell.nodeLabel.text = topic.nodeName

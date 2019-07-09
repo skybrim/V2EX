@@ -24,9 +24,17 @@ class TopicDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Reply Cell", for: indexPath)
         if let replyCell = cell as? TopicReplyTableViewCell,
             let reply = replies?[indexPath.row] {
-            replyCell.textLabel?.text = reply.content
+            replyCell.avatarImageView.kf.setImage(with: reply.member?.avatarUrl, placeholder: UIImage(named: "placeholder"))
+            replyCell.userLabel.text = reply.member?.username
+            replyCell.tagLabel.isHidden = reply.member?.id != topicDetails?.first?.member?.id
+            replyCell.timeLabel.text = reply.createdFormat
+            replyCell.contentLabel.text = reply.content
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
     }
 
     //MARK: - Network
@@ -72,8 +80,11 @@ class TopicDetailTableViewController: UITableViewController {
                     make.height.equalTo(height).priority(.high)
                 })
                 //顶部的 topicDetailView 的其他布局放在这里，和 markdown 同时加载显示出来
+                self?.topicDetailView.avatarImageView.kf.setImage(with: self?.topicDetails?.first?.member?.avatarUrl, placeholder: UIImage(named: "placeholder"))
+                self?.topicDetailView.userLabel.text = self?.topicDetails?.first?.member?.username
+                self?.topicDetailView.timeLabel.text = self?.topicDetails?.first?.createdFormat
                 self?.topicDetailView.titleLabel.text = self?.topicDetails?.first?.title
-                
+                //刷新布局
                 self?.topicDetailView.setNeedsLayout()
                 self?.topicDetailView.layoutIfNeeded()
                 self?.topicDetailTableView.tableHeaderView = self?.topicDetailView
