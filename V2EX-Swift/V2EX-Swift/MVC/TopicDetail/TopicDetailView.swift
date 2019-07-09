@@ -36,9 +36,7 @@ class TopicDetailView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.left.equalTo(10)
             make.bottom.equalTo(-10)
-//            make.right.equalTo(-10)
-            make.width.equalTo(UIScreen.main.bounds.size.width - 20)
-
+            make.right.equalTo(-10)
         }
     }
     

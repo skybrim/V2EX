@@ -112,13 +112,17 @@ class TopicDetailTableViewController: UITableViewController {
     
     var topicDetails: [TopicDetail]? {
         didSet {
-//            topicDetailView.titleLabel.text = self.topicDetails?.first?.title
-            topicDetailView.titleLabel.text = "title"
+            //加载 markdown
             topicDetailView.mdView.load(markdown: self.topicDetails?.first?.content)
             topicDetailView.mdView.onRendered = { [weak self] height in
                 self?.topicDetailView.mdView.snp.makeConstraints ({ (make) in
                     make.height.equalTo(height).priority(.high)
                 })
+                //顶部的 topicDetailView 的其他布局放在这里，和 markdown 同时加载显示出来
+                self?.topicDetailView.titleLabel.text = self?.topicDetails?.first?.title
+
+                
+                
                 self?.topicDetailView.setNeedsLayout()
                 self?.topicDetailView.layoutIfNeeded()
                 self?.topicDetailTableView.tableHeaderView = self?.topicDetailView
@@ -126,7 +130,11 @@ class TopicDetailTableViewController: UITableViewController {
         }
     }
     
-    var replies: [Reply]?
+    var replies: [Reply]? {
+        didSet {
+            
+        }
+    }
     
     var topicDetailView = TopicDetailView()
     
