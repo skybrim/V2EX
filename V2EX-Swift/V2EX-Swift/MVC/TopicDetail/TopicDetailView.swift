@@ -21,19 +21,37 @@ class TopicDetailView: UIView {
     }
     
     func setupUI() {
+        addSubview(titleLabel)
         addSubview(mdView)
         
-        mdView.snp.makeConstraints { (make) in
-            make.top.equalTo(0)
+        self.snp.makeConstraints { (make) in
+            make.width.equalTo(UIScreen.main.bounds.size.width)
+        }
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
             make.left.equalTo(10)
-            make.bottom.equalTo(0)
             make.right.equalTo(-10)
-            make.width.equalToSuperview()
+        }
+        mdView.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.left.equalTo(10)
+            make.bottom.equalTo(-10)
+//            make.right.equalTo(-10)
+            make.width.equalTo(UIScreen.main.bounds.size.width - 20)
+
         }
     }
     
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.textColor = UIColor.init(hex: TextBlack)
+        return label
+    }()
     
-    lazy var mdView = MarkdownView()
+    var mdView = MarkdownView()
     
     /*
     // Only override draw() if you perform custom drawing.

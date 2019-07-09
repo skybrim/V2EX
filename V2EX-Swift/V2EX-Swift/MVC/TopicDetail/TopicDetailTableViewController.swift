@@ -84,16 +84,6 @@ class TopicDetailTableViewController: UITableViewController {
             switch result {
             case .success(let response):
                 self.topicDetails = try? JSONDecoder().decode([TopicDetail].self, from: response.data)
-                let topicDetailView = TopicDetailView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 0))
-                topicDetailView.mdView.load(markdown: self.topicDetails?.first?.content)
-                topicDetailView.mdView.onRendered = { height in
-                    topicDetailView.mdView.snp.makeConstraints ({ (make) in
-                        make.height.equalTo(height).priority(.high)
-                    })
-                    topicDetailView.setNeedsLayout()
-                    topicDetailView.layoutIfNeeded()
-                    self.topicDetailTableView.tableHeaderView = topicDetailView
-                }
             case .failure(let error):
                 print(error)
             }
@@ -120,14 +110,30 @@ class TopicDetailTableViewController: UITableViewController {
         }
     }
     
-    var topicDetails: [TopicDetail]?
+    var topicDetails: [TopicDetail]? {
+        didSet {
+//            topicDetailView.titleLabel.text = self.topicDetails?.first?.title
+            topicDetailView.titleLabel.text = "title"
+            topicDetailView.mdView.load(markdown: self.topicDetails?.first?.content)
+            topicDetailView.mdView.onRendered = { [weak self] height in
+                self?.topicDetailView.mdView.snp.makeConstraints ({ (make) in
+                    make.height.equalTo(height).priority(.high)
+                })
+                self?.topicDetailView.setNeedsLayout()
+                self?.topicDetailView.layoutIfNeeded()
+                self?.topicDetailTableView.tableHeaderView = self?.topicDetailView
+            }
+        }
+    }
     
     var replies: [Reply]?
     
+    var topicDetailView = TopicDetailView()
+    
     @IBOutlet var topicDetailTableView: UITableView! {
         didSet {
-            
             topicDetailTableView.register(TopicReplyTableViewCell.self, forCellReuseIdentifier: "Topic Reply Cell")
+            topicDetailTableView.tableHeaderView = topicDetailView
             topicDetailTableView.tableFooterView = UIView()
         }
     }
