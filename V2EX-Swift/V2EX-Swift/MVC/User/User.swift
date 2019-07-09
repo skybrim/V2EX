@@ -9,40 +9,39 @@
 import Foundation
 
 struct User: Codable {
-    
-    var username: String?
-    var website: String?
-    var github: String?
+    var id: String?
     var psn: String?
-    var avatarNormal: String?
     var bio: String?
     var url: String?
+    var btc: String?
+    var github: String?
+    var status: String?
+    var website: String?
     var tagline: String?
     var twitter: String?
     var created: String?
-    var status: String?
-    var avatarLarge: String?
-    var avatarMini: String?
+    var username: String?
     var location: String?
-    var btc: String?
-    var id: String?
-    
+    var avatarMini: String?
+    var avatarLarge: String?
+    var avatarNormal: String?
+
     enum CodingKeys: String, CodingKey {
-        case username
-        case website
-        case github
+        case id
         case psn
-        case avatarNormal = "avatar_normal"
         case bio
         case url
+        case btc
+        case github
+        case status
+        case website
         case tagline
         case twitter
         case created
-        case status
-        case avatarLarge = "avatar_large"
-        case avatarMini = "avatar_mini"
+        case username
         case location
-        case btc
-        case id
+        case avatarMini = "avatar_mini"
+        case avatarLarge = "avatar_large"
+        case avatarNormal = "avatar_normal"
     }
 }

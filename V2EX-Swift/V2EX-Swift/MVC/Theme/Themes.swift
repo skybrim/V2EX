@@ -23,8 +23,16 @@ struct Themes {
             "all",
             "r2",
             "nodes",
-            "members",
+//            "members",
         ]
+    }
+    
+    enum Function: Int {
+        case account = 0
+        case theme = 1
+        case navigation = 2
+        
+        static var all = [Function.account, .theme, .navigation]
     }
     
     var themeInfo = [String]()

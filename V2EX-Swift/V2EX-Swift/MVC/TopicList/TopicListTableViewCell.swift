@@ -24,7 +24,6 @@ class TopicListTableViewCell: UITableViewCell {
     //MARK: - private func
     
     private func setupUI() {
-        
         //全屏分割线
         //2.调整(iOS8以上)tableView边距
         if self.responds(to: #selector(setter: preservesSuperviewLayoutMargins)) {
@@ -113,6 +112,7 @@ class TopicListTableViewCell: UITableViewCell {
     }()
     
     //MARK: -
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

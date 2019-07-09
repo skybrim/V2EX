@@ -46,9 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         #if DEBUG
         PerformanceMonitor.shared().start()
         #endif
-        let splitViewController = window!.rootViewController as! UISplitViewController
-        splitViewController.delegate = self
-        splitViewController.preferredDisplayMode = .allVisible
+        if let splitVC = window!.rootViewController as? UISplitViewController {
+            splitVC.delegate = self
+            splitVC.preferredDisplayMode = .allVisible
+        }
         return true
     }
 

@@ -20,12 +20,21 @@ class TopicDetailView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func setupUI() {
+    private func setupUI() {
+        //全屏分割线
+        //2.调整(iOS8以上)tableView边距
+        if self.responds(to: #selector(setter: preservesSuperviewLayoutMargins)) {
+            self.preservesSuperviewLayoutMargins = false
+        }
+        //3.调整(iOS8以上)view边距
+        if self.responds(to: #selector(setter: layoutMargins)) {
+            self.layoutMargins = UIEdgeInsets.zero
+        }
         addSubview(titleLabel)
         addSubview(mdView)
         
         self.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.main.bounds.size.width)
+            make.width.equalTo(CGFloat.detailWidth - 20)
         }
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(10)
@@ -44,8 +53,9 @@ class TopicDetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.textColor = UIColor.init(hex: TextBlack)
+        label.sizeToFit()
         return label
     }()
     

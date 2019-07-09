@@ -34,37 +34,39 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return Themes.Function.all.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        
+        if section == Themes.Function.account.rawValue {
+            return 0
+        } else if section == Themes.Function.theme.rawValue {
             return themes.themeInfo.count
-        } else {
-            return 1
+        } else if section == Themes.Function.navigation.rawValue {
+            return 0
         }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == Themes.Function.account.rawValue {
             let accountCell = tableView.dequeueReusableCell(withIdentifier: "Account Cell", for: indexPath)
             accountCell.textLabel?.text = NSLocalizedString("user", comment: "user")
             return accountCell
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == Themes.Function.theme.rawValue {
             let nodesCell = tableView.dequeueReusableCell(withIdentifier: "Nodes Cell", for: indexPath)
             nodesCell.textLabel?.text = NSLocalizedString(themes.themeInfo[indexPath.row], comment: themes.themeInfo[indexPath.row])
             return nodesCell
-        } else {
+        } else if indexPath.section == Themes.Function.navigation.rawValue {
             let navigationCell = tableView.dequeueReusableCell(withIdentifier: "Navigation Cell", for: indexPath)
             navigationCell.textLabel?.text = NSLocalizedString("planes", comment: "Planes")
             return navigationCell
         }
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
+        if indexPath.section == Themes.Function.account.rawValue {
             return 64
         }
         return 44
