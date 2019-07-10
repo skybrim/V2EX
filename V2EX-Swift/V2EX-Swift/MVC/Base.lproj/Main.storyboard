@@ -61,7 +61,7 @@
         <!--Topic Detail Table View Controller-->
         <scene sceneID="9fL-p7-sMW">
             <objects>
-                <tableViewController id="bUw-RB-GUE" customClass="TopicDetailTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Topic Detail VC" modalPresentationStyle="formSheet" id="bUw-RB-GUE" customClass="TopicDetailTableViewController" customModule="V2EX_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="asG-Rw-mau">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

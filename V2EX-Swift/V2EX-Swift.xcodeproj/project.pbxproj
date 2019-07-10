@@ -27,6 +27,7 @@
 		B85C8A8D22D57F0A00A816C2 /* V2EX-Hot.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B85C8A8122D57F0A00A816C2 /* V2EX-Hot.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B85C8A9922D58EF700A816C2 /* V2exHotApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C8A9822D58EF700A816C2 /* V2exHotApi.swift */; };
 		B85C8A9B22D58FA200A816C2 /* HotTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C8A9A22D58FA200A816C2 /* HotTopic.swift */; };
+		B85C8A9E22D5B4BE00A816C2 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C8A9D22D5B4BE00A816C2 /* UIUtils.swift */; };
 		B87E38E322CC353900D28068 /* TopicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E38E222CC353900D28068 /* TopicListTableViewCell.swift */; };
 		B880E7CC22D33A6100AEAD50 /* TopicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B880E7CB22D33A6100AEAD50 /* TopicDetailView.swift */; };
 		B8F2650222C9A11100ABC9D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8F2650422C9A11100ABC9D4 /* Localizable.strings */; };
@@ -88,6 +89,7 @@
 		B85C8A9322D5820100A816C2 /* V2EX-Hot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "V2EX-Hot.entitlements"; sourceTree = "<group>"; };
 		B85C8A9822D58EF700A816C2 /* V2exHotApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exHotApi.swift; sourceTree = "<group>"; };
 		B85C8A9A22D58FA200A816C2 /* HotTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotTopic.swift; sourceTree = "<group>"; };
+		B85C8A9D22D5B4BE00A816C2 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		B87E38E222CC353900D28068 /* TopicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListTableViewCell.swift; sourceTree = "<group>"; };
 		B880E7CB22D33A6100AEAD50 /* TopicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailView.swift; sourceTree = "<group>"; };
 		B8F264FF22C9A09E00ABC9D4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				B83F9ABB22CDF1DE00E90C99 /* Utils.swift */,
+				B85C8A9D22D5B4BE00A816C2 /* UIUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				B87E38E322CC353900D28068 /* TopicListTableViewCell.swift in Sources */,
 				B8F2650922C9D57200ABC9D4 /* V2exUrl.swift in Sources */,
 				B880E7CC22D33A6100AEAD50 /* TopicDetailView.swift in Sources */,
+				B85C8A9E22D5B4BE00A816C2 /* UIUtils.swift in Sources */,
 				B829713322C3684B00D8E756 /* ThemesTableViewController.swift in Sources */,
 				B83F0A7522CEE82C005EC7BC /* TopicDetail.swift in Sources */,
 				B83F0A7922CEE853005EC7BC /* TopicReplyTableViewCell.swift in Sources */,

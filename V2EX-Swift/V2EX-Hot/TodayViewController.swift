@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
             preferredContentSize = CGSize(width: maxSize.width, height: 110)
         } else {
             //展开
-            preferredContentSize = CGSize(width: maxSize.width, height: CGFloat(44 * (hotTopics?.count ?? 10)))
+            preferredContentSize = CGSize(width: maxSize.width, height: hotTopicListTableView.bounds.width)
         }
     }
     
@@ -55,7 +55,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let hotTopic = hotTopics?[indexPath.row] {
+            extensionContext?.open(URL(string: "V2EX-Hot://com.skybrim.V2EX-Swift.V2EX-Hot?id=\(hotTopic.id ?? 0)")!)
+        }
     }
     
     //MARK: - Network

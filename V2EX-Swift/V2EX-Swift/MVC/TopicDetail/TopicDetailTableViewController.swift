@@ -40,16 +40,20 @@ class TopicDetailTableViewController: UITableViewController {
     //MARK: - Network
     
     /// 获取主题信息
-    private func requestTopicDetail() {
+    private func requestTopicDetail(completion: @escaping () -> ()) {
         v2exApiProvider.request(.topicsShow(id: topicID!)) { (result) in
             switch result {
             case .success(let response):
                 self.topicDetails = try? JSONDecoder().decode([TopicDetail].self, from: response.data)
+                completion()
             case .failure(let error):
                 print(error)
             }
         }
     }
+    
+    var completionHandlers: [() -> Void] = []
+
     
     private func requestReplies() {
         v2exApiProvider.request(.repliesShow(topic_id: topicID!, page: 0, page_size: 20)) { (result) in
@@ -66,8 +70,9 @@ class TopicDetailTableViewController: UITableViewController {
     
     var topicID: String? {
         didSet {
-            requestTopicDetail()
-            requestReplies()
+            requestTopicDetail { [weak self] in
+                self?.requestReplies()
+            }
         }
     }
     

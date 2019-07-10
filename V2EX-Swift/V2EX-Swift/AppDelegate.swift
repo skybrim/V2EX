@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         collapseSecondary secondaryViewController: UIViewController,
         onto primaryViewController: UIViewController
         ) -> Bool {
-        if let cvc = secondaryViewController as? TopicListTableViewController {
-            return cvc.theme == nil
+        if let cvc = secondaryViewController as? TopicDetailTableViewController {
+            return cvc.topicID == nil
         }
         return true
     }
@@ -52,6 +52,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.scheme == "V2EX-Hot" {
+            //widget 传来的点击事件
+            if let splitVC = window!.rootViewController as? UISplitViewController,
+                let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Topic Detail VC") as? TopicDetailTableViewController {
+                detailVC.topicID = url.absoluteString.urlQuery()["id"]
+                splitVC.showDetailViewController(detailVC, sender: nil)
+            }
+        }
+        return true
+    }
+    
+    //MARK: -
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
