@@ -15,3 +15,11 @@ pod 'MarkdownView'
 pod 'MonkeyKing'
 
 end
+
+target 'V2EX-Hot' do
+  
+  pod 'Moya'
+  pod 'Kingfisher'
+  pod 'SnapKit'
+  
+end
