@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class TopicDetailTableViewController: UITableViewController {
 
@@ -55,8 +56,8 @@ class TopicDetailTableViewController: UITableViewController {
     var completionHandlers: [() -> Void] = []
 
     
-    private func requestReplies() {
-        v2exApiProvider.request(.repliesShow(topic_id: topicID!, page: 0, page_size: 20)) { (result) in
+    @objc private func requestReplies() {
+        v2exApiProvider.request(.repliesShow(topic_id: topicID!)) { (result) in
             switch result {
             case .success(let response):
                 self.replies = try? JSONDecoder().decode([Reply].self, from: response.data)

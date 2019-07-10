@@ -22,7 +22,7 @@ enum V2exApi{
     case topicsLatest
     case topicsShow(id: String)
     
-    case repliesShow(topic_id: String, page: Int, page_size: Int)
+    case repliesShow(topic_id: String)
     
     case membersShow(username: String)
 }
@@ -47,7 +47,7 @@ extension V2exApi: TargetType {
             rawPath = "/api/topics/hot.json"
         case .topicsShow(_):
             rawPath = "/api/topics/show.json"
-        case .repliesShow(_, _, _):
+        case .repliesShow(_):
             rawPath = "/api/replies/show.json"
         case .membersShow(_):
             rawPath = "/api/members/show.json"
@@ -62,10 +62,8 @@ extension V2exApi: TargetType {
             parmeters["name"] = name
         case .topicsShow(let id):
             parmeters["id"] = id
-        case .repliesShow(let topic_id, let page, let page_size):
+        case .repliesShow(let topic_id):
             parmeters["topic_id"] = topic_id
-            parmeters["page"] = page
-            parmeters["page_size"] = page_size
         case .membersShow(let username):
             parmeters["username"] = username
         default:
