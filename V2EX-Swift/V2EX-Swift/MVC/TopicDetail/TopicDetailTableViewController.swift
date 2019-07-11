@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import SafariServices
 
 class TopicDetailTableViewController: UITableViewController {
 
@@ -81,6 +82,19 @@ class TopicDetailTableViewController: UITableViewController {
         didSet {
             //加载 markdown
             topicDetailView.mdView.load(markdown: self.topicDetails?.first?.content)
+            //点击
+            topicDetailView.mdView.onTouchLink = { [weak self] request in
+                guard let url = request.url else { return false }
+                if url.scheme == "file" {
+                    return false
+                } else if url.scheme == "https" {
+                    let safari = SFSafariViewController(url: url)
+                    self?.present(safari, animated: true)
+                    return false
+                } else {
+                    return false
+                }
+            }
             topicDetailView.mdView.onRendered = { [weak self] height in
                 self?.topicDetailView.mdView.snp.makeConstraints ({ (make) in
                     make.height.equalTo(height).priority(.high)
