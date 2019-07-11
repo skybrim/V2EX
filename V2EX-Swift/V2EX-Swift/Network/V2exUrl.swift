@@ -13,6 +13,7 @@ import Moya
 let v2exUrlProvider = MoyaProvider<V2exUrl>()
 
 enum V2exUrl{
+    case signIn
     case topicList(tab: String?) //获取首页列表
     case favoriteList(page: Int) //获取我的收藏帖子列表
     case nodeTopicList(nodeName: String, page:Int) //获取节点主题列表
@@ -24,6 +25,8 @@ extension V2exUrl: TargetType {
     var path: String {
         var rawPath = ""
         switch self {
+        case .signIn:
+            rawPath = "/signin"
         case .topicList(_):
             rawPath = "/"
         case .favoriteList(_):
@@ -42,6 +45,8 @@ extension V2exUrl: TargetType {
             parmeters["p"] = page
         case .nodeTopicList(_, let page):
             parmeters["p"] = page
+        default:
+            break
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
