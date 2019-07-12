@@ -88,7 +88,7 @@ class TopicReplyTableViewCell: UITableViewCell {
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
         label.textColor = UIColor.init(hex: TextDarkGray)
-        label.text = "楼主"
+        label.text = " 楼主 "
         label.layer.borderColor = UIColor.init(hex: TextDarkGray)?.cgColor
         label.layer.borderWidth = 0.5
         label.layer.cornerRadius = 3.0
