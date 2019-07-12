@@ -14,6 +14,72 @@ public let TextDarkGray = "#666666"
 public let TextGray = "#999999"
 public let lineGray = "#f5f5f5"
 
+
+extension UIFont {
+    static func registerFont(fontName: String) {
+        if let url = Bundle.main.url(forResource: fontName, withExtension: "ttf"),
+            let fontDataProvider = CGDataProvider(url: url as NSURL),
+            let newFont = CGFont(fontDataProvider) {
+            CTFontManagerRegisterGraphicsFont(newFont, nil)
+        }
+    }
+}
+
+extension UIImage {
+    static func image(iconCode: String, fontName: String, size: CGFloat, color: UIColor) -> UIImage? {
+        let imageSize = CGSize(width: size, height: size)
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        label.font = UIFont(name: fontName, size: size)
+        label.text = iconCode
+        label.textColor = color
+        label.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let retImage = UIGraphicsGetImageFromCurrentImageContext()
+        return retImage
+    }
+}
+
+
+
+
+
+
+/*
+ + (UIImage*)imageWithIcon:(NSString*)iconCode inFont:(NSString*)fontName size:(NSUInteger)size color:(UIColor*)color {
+ CGSize imageSize = CGSizeMake(size, size);
+ UIGraphicsBeginImageContextWithOptions(imageSize, NO, [[UIScreen mainScreen] scale]);
+ UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, size, size)];
+ label.font = [UIFont fontWithName:fontName size:size];
+ label.text = iconCode;
+ if(color){
+ label.textColor = color;
+ }
+ [label.layer renderInContext:UIGraphicsGetCurrentContext()];
+ UIImage *retImage = UIGraphicsGetImageFromCurrentImageContext();
+ return retImage;
+ }
+
+ + (void)registerFontWithURL:(NSURL *)url {
+ NSAssert([[NSFileManager defaultManager] fileExistsAtPath:[url path]], @"Font file doesn't exist");
+ CGDataProviderRef fontDataProvider = CGDataProviderCreateWithURL((__bridge CFURLRef)url);
+ CGFontRef newFont = CGFontCreateWithDataProvider(fontDataProvider);
+ CGDataProviderRelease(fontDataProvider);
+ CTFontManagerRegisterGraphicsFont(newFont, nil);
+ CGFontRelease(newFont);
+ }
+ 
+ + (UIFont *)fontWithSize:(CGFloat)size {
+ UIFont *font = [UIFont fontWithName:[self fontName] size:size];
+ if (font == nil) {
+ [self registerFontWithURL: [[NSBundle mainBundle] URLForResource:[self fontName] withExtension:@"ttf"]];
+ font = [UIFont fontWithName:[self fontName] size:size];
+ NSAssert(font, @"UIFont object should not be nil, check if the font file is added to the application bundle and you're using the correct font name.");
+ }
+ return font;
+ }
+ 
+ */
+
 extension CGFloat {
     public static var screenWidth: CGFloat {
         get {
