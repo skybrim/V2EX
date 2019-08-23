@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Ji
 
 class V2EX_SwiftTests: XCTestCase {
 
@@ -30,4 +31,18 @@ class V2EX_SwiftTests: XCTestCase {
         }
     }
 
+}
+
+extension V2EX_SwiftTests {
+    
+    func testModel_TopicList() {
+        
+        let jiDoc = Ji(htmlData: response.data)
+        if let topicListRootNode = jiDoc? .xPath("//body/div[@id='Wrapper']/div[@class='content']/div[@id='Main']/div[2]/div[@class='cell item']") {
+            for topicNode in topicListRootNode {
+                let topic = Topic(topicNode)
+                self.topicList.topics.append(topic)
+            }
+        }
+    }
 }
