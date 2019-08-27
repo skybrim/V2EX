@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Ji
+import Pods_V2EX_Swift
 
 class V2EX_Tests: XCTestCase {
 
