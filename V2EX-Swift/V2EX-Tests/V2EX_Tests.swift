@@ -7,8 +7,6 @@
 //
 
 import XCTest
-import Ji
-import Pods_V2EX_Swift
 
 class V2EX_Tests: XCTestCase {
 
@@ -23,6 +21,7 @@ class V2EX_Tests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
 
     func testPerformanceExample() {
