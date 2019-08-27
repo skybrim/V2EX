@@ -22,3 +22,10 @@ target 'V2EX-Hot' do
   pod 'Kingfisher'
   
 end
+
+target 'V2EX-Tests' do
+  
+  pod 'Moya'
+  pod 'Ji'
+  
+end
