@@ -30,6 +30,7 @@
 		B85C8A9E22D5B4BE00A816C2 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85C8A9D22D5B4BE00A816C2 /* UIUtils.swift */; };
 		B87E38E322CC353900D28068 /* TopicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E38E222CC353900D28068 /* TopicListTableViewCell.swift */; };
 		B880E7CC22D33A6100AEAD50 /* TopicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B880E7CB22D33A6100AEAD50 /* TopicDetailView.swift */; };
+		B8D2E4EE2314BF9700B18576 /* V2EX_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2E4ED2314BF9700B18576 /* V2EX_Tests.swift */; };
 		B8F2650222C9A11100ABC9D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8F2650422C9A11100ABC9D4 /* Localizable.strings */; };
 		B8F2650722C9B64E00ABC9D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650622C9B64E00ABC9D4 /* User.swift */; };
 		B8F2650922C9D57200ABC9D4 /* V2exUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2650822C9D57200ABC9D4 /* V2exUrl.swift */; };
@@ -44,6 +45,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B85C8A8022D57F0A00A816C2;
 			remoteInfo = "V2EX-Hot";
+		};
+		B8D2E4F02314BF9700B18576 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B829710122C35DD800D8E756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B829710822C35DD800D8E756;
+			remoteInfo = "V2EX-Swift";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -92,6 +100,9 @@
 		B85C8A9D22D5B4BE00A816C2 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		B87E38E222CC353900D28068 /* TopicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListTableViewCell.swift; sourceTree = "<group>"; };
 		B880E7CB22D33A6100AEAD50 /* TopicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailView.swift; sourceTree = "<group>"; };
+		B8D2E4EB2314BF9700B18576 /* V2EX-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "V2EX-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D2E4ED2314BF9700B18576 /* V2EX_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2EX_Tests.swift; sourceTree = "<group>"; };
+		B8D2E4EF2314BF9700B18576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F264FF22C9A09E00ABC9D4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		B8F2650322C9A11100ABC9D4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B8F2650522C9A11D00ABC9D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -118,6 +129,13 @@
 			files = (
 				B85C8A8322D57F0A00A816C2 /* NotificationCenter.framework in Frameworks */,
 				A8D46957FCA9F34FE04D4821 /* Pods_V2EX_Hot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D2E4E82314BF9700B18576 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +217,7 @@
 			children = (
 				B829710B22C35DD800D8E756 /* V2EX-Swift */,
 				B85C8A8422D57F0A00A816C2 /* V2EX-Hot */,
+				B8D2E4EC2314BF9700B18576 /* V2EX-Tests */,
 				B829710A22C35DD800D8E756 /* Products */,
 				C1B235DED1AE385B9FA5D97D /* Pods */,
 				760F041744918F11B4B6CDBE /* Frameworks */,
@@ -210,6 +229,7 @@
 			children = (
 				B829710922C35DD800D8E756 /* V2EX-Swift.app */,
 				B85C8A8122D57F0A00A816C2 /* V2EX-Hot.appex */,
+				B8D2E4EB2314BF9700B18576 /* V2EX-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +278,15 @@
 				B85C8A9322D5820100A816C2 /* V2EX-Hot.entitlements */,
 			);
 			path = "V2EX-Hot";
+			sourceTree = "<group>";
+		};
+		B8D2E4EC2314BF9700B18576 /* V2EX-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B8D2E4ED2314BF9700B18576 /* V2EX_Tests.swift */,
+				B8D2E4EF2314BF9700B18576 /* Info.plist */,
+			);
+			path = "V2EX-Tests";
 			sourceTree = "<group>";
 		};
 		C1B235DED1AE385B9FA5D97D /* Pods */ = {
@@ -313,6 +342,24 @@
 			productReference = B85C8A8122D57F0A00A816C2 /* V2EX-Hot.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		B8D2E4EA2314BF9700B18576 /* V2EX-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8D2E4F22314BF9700B18576 /* Build configuration list for PBXNativeTarget "V2EX-Tests" */;
+			buildPhases = (
+				B8D2E4E72314BF9700B18576 /* Sources */,
+				B8D2E4E82314BF9700B18576 /* Frameworks */,
+				B8D2E4E92314BF9700B18576 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8D2E4F12314BF9700B18576 /* PBXTargetDependency */,
+			);
+			name = "V2EX-Tests";
+			productName = "V2EX-Tests";
+			productReference = B8D2E4EB2314BF9700B18576 /* V2EX-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -339,6 +386,10 @@
 							};
 						};
 					};
+					B8D2E4EA2314BF9700B18576 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = B829710822C35DD800D8E756;
+					};
 				};
 			};
 			buildConfigurationList = B829710422C35DD800D8E756 /* Build configuration list for PBXProject "V2EX-Swift" */;
@@ -357,6 +408,7 @@
 			targets = (
 				B829710822C35DD800D8E756 /* V2EX-Swift */,
 				B85C8A8022D57F0A00A816C2 /* V2EX-Hot */,
+				B8D2E4EA2314BF9700B18576 /* V2EX-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -378,6 +430,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85C8A8922D57F0A00A816C2 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D2E4E92314BF9700B18576 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +540,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B8D2E4E72314BF9700B18576 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D2E4EE2314BF9700B18576 /* V2EX_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -488,6 +555,11 @@
 			isa = PBXTargetDependency;
 			target = B85C8A8022D57F0A00A816C2 /* V2EX-Hot */;
 			targetProxy = B85C8A8B22D57F0A00A816C2 /* PBXContainerItemProxy */;
+		};
+		B8D2E4F12314BF9700B18576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B829710822C35DD800D8E756 /* V2EX-Swift */;
+			targetProxy = B8D2E4F02314BF9700B18576 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -744,6 +816,46 @@
 			};
 			name = Release;
 		};
+		B8D2E4F32314BF9700B18576 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "V2EX-Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.skybrim.V2EX-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/V2EX-Swift.app/V2EX-Swift";
+			};
+			name = Debug;
+		};
+		B8D2E4F42314BF9700B18576 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "V2EX-Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.skybrim.V2EX-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/V2EX-Swift.app/V2EX-Swift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -770,6 +882,15 @@
 			buildConfigurations = (
 				B85C8A8E22D57F0A00A816C2 /* Debug */,
 				B85C8A8F22D57F0A00A816C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8D2E4F22314BF9700B18576 /* Build configuration list for PBXNativeTarget "V2EX-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8D2E4F32314BF9700B18576 /* Debug */,
+				B8D2E4F42314BF9700B18576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
