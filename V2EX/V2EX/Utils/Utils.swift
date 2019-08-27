@@ -21,3 +21,17 @@ extension String {
         return params
     }
 }
+
+class Tools {
+    
+    static func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var storeDic = [Int: Int]()
+        for (i, num) in nums.enumerated() {
+            if let anotherIndex = storeDic[num] {
+                return [anotherIndex, i]
+            }
+            storeDic[target - num] = i
+        }
+        return []
+    }
+}

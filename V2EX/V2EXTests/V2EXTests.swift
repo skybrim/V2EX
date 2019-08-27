@@ -19,16 +19,22 @@ class V2EXTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_getUrlParameters() {
+        let url = "https://www.skybrim.top?key=value"
+        let isSuccess = (url.urlQuery() == ["key": "value"])
+        XCTAssert(isSuccess, "未能获取 url 的参数字典")
     }
 
-    func testPerformanceExample() {
+    func test_measure() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            let _ = Tools.twoSum([1,2,3,4,5,6], 3)
         }
     }
+    
+    func test_asyncFunc() {
 
+        
+    }
 }
