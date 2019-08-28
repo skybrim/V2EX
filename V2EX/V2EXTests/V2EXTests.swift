@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import V2EX
+@testable import Moya
 
 class V2EXTests: XCTestCase {
 
@@ -33,8 +34,18 @@ class V2EXTests: XCTestCase {
         }
     }
     
-    func test_asyncFunc() {
-
-        
+    func test_async() {
+        let expect = XCTestExpectation(description: "siteInfo")
+        v2exApiProvider.request(.siteInfo) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                XCTAssertTrue(moyaResponse.statusCode == 200)
+                expect.fulfill()
+            case .failure(_):
+                XCTAssert(false, "网络异常")
+            }
+        }
+        let result = XCTWaiter.wait(for: [expect], timeout: 5)
+        XCTAssertEqual(result, .completed)
     }
 }
