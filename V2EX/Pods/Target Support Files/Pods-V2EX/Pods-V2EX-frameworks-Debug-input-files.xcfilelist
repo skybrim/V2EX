@@ -5,7 +5,6 @@ ${BUILT_PRODUCTS_DIR}/Ji/Ji.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/MarkdownView/MarkdownView.framework
-${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/Result/Result.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

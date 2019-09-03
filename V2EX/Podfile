@@ -12,7 +12,7 @@ pod 'SnapKit'
 pod 'GDPerformanceView-Swift', :configurations => ['Debug']
 pod 'MJRefresh'
 pod 'MarkdownView'
-pod 'MonkeyKing'
+#pod 'MonkeyKing'
 
 end
 
@@ -20,5 +20,12 @@ target 'V2EXHot' do
   
   pod 'Moya'
   pod 'Kingfisher'
+  
+end
+
+target 'V2EXTests' do
+  
+  pod 'Quick'
+  pod 'Nimble'
   
 end
