@@ -10,6 +10,7 @@
 		22226F1F2FD99E787C39A570 /* Pods_V2EXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2564392ED256456EA5916C74 /* Pods_V2EXTests.framework */; };
 		2C4C724C870497DE5F04ED71 /* Pods_V2EXHot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459D5BFE438881FDEE4F9B57 /* Pods_V2EXHot.framework */; };
 		512C8E9D4B8A3A2C9E378EB9 /* Pods_V2EX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 437D74E3657AE93EEE927C92 /* Pods_V2EX.framework */; };
+		B82B54EB231E45EF0060DA95 /* QuickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B54EA231E45EF0060DA95 /* QuickTests.swift */; };
 		B8F2565123150F350002BBA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2565023150F350002BBA9 /* AppDelegate.swift */; };
 		B8F2565623150F350002BBA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F2565423150F350002BBA9 /* Main.storyboard */; };
 		B8F2565823150F360002BBA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F2565723150F360002BBA9 /* Assets.xcassets */; };
@@ -85,6 +86,9 @@
 		30F9595846405EDE3E5BCA93 /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
 		437D74E3657AE93EEE927C92 /* Pods_V2EX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_V2EX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459D5BFE438881FDEE4F9B57 /* Pods_V2EXHot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_V2EXHot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B82B54E6231E42990060DA95 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B82B54E8231E429F0060DA95 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B82B54EA231E45EF0060DA95 /* QuickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTests.swift; sourceTree = "<group>"; };
 		B8F2564D23150F350002BBA9 /* V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F2565023150F350002BBA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F2565523150F350002BBA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F2566523150F360002BBA9 /* V2EXTests.swift */,
+				B82B54EA231E45EF0060DA95 /* QuickTests.swift */,
 				B8F2566723150F360002BBA9 /* Info.plist */,
 			);
 			path = V2EXTests;
@@ -236,6 +241,8 @@
 		B8F25683231510160002BBA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B82B54E8231E429F0060DA95 /* Nimble.framework */,
+				B82B54E6231E42990060DA95 /* Quick.framework */,
 				B8F25684231510160002BBA9 /* NotificationCenter.framework */,
 				437D74E3657AE93EEE927C92 /* Pods_V2EX.framework */,
 				459D5BFE438881FDEE4F9B57 /* Pods_V2EXHot.framework */,
@@ -643,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F2566623150F360002BBA9 /* V2EXTests.swift in Sources */,
+				B82B54EB231E45EF0060DA95 /* QuickTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +911,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/V2EX.app/V2EX";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -924,6 +933,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/V2EX.app/V2EX";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

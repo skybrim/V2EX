@@ -5,14 +5,14 @@ inhibit_all_warnings!
 
 target 'V2EX' do
 
-pod 'Moya'
-pod 'Ji'
-pod 'Kingfisher'
-pod 'SnapKit'
-pod 'GDPerformanceView-Swift', :configurations => ['Debug']
-pod 'MJRefresh'
-pod 'MarkdownView'
-#pod 'MonkeyKing'
+  pod 'Moya'
+  pod 'Ji'
+  pod 'Kingfisher'
+  pod 'SnapKit'
+  pod 'GDPerformanceView-Swift', :configurations => ['Debug']
+  pod 'MJRefresh'
+  pod 'MarkdownView'
+  #pod 'MonkeyKing'
 
 end
 
