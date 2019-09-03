@@ -17,11 +17,16 @@ class ThemesTests: QuickSpec {
         //describe闭包开始第一个测试案例，为ThemesTableViewController编写测试
         describe("ThemesTableViewController") {
             //beforeEach会在describe中执行，它将在每个范例开始之前运行
-            //所以在ThemesTableViewController内的每一个测试被执行前，会先运行这段代码。
+            //所以在ThemesTableViewController内的每一个测试被执行前，会先运行这段代码
+            //相当于 setUp
             beforeEach {
                 subject = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Nodes View Controller") as? ThemesTableViewController
                 //将视图控制器放入内存中，它就像是调用viewDidLoad
                 _ = subject.view
+            }
+            //相当于 tearDown
+            afterEach {
+                
             }
             
             context("主节点页面加载完成") {
