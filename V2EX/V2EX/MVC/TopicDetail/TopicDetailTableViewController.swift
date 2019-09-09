@@ -16,29 +16,6 @@ class TopicDetailTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return replies?.count ?? 0
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Reply Cell", for: indexPath)
-        if let replyCell = cell as? TopicReplyTableViewCell,
-            let reply = replies?[indexPath.row] {
-            replyCell.avatarImageView.kf.setImage(with: reply.member?.avatarUrl, placeholder: UIImage(named: "placeholder"))
-            replyCell.userLabel.text = reply.member?.username
-            replyCell.tagLabel.isHidden = reply.member?.id != topicDetails?.first?.member?.id
-            replyCell.timeLabel.text = reply.createdFormat
-            replyCell.contentLabel.text = reply.content
-        }
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
-
     //MARK: - Network
     
     /// 获取主题信息
@@ -131,5 +108,31 @@ class TopicDetailTableViewController: UITableViewController {
                 topicDetailTableView.separatorInset = UIEdgeInsets.zero
             }
         }
+    }
+}
+
+extension TopicDetailTableViewController {
+    
+    // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return replies?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic Reply Cell", for: indexPath)
+        if let replyCell = cell as? TopicReplyTableViewCell,
+            let reply = replies?[indexPath.row] {
+            replyCell.avatarImageView.kf.setImage(with: reply.member?.avatarUrl, placeholder: UIImage(named: "placeholder"))
+            replyCell.userLabel.text = reply.member?.username
+            replyCell.tagLabel.isHidden = reply.member?.id != topicDetails?.first?.member?.id
+            replyCell.timeLabel.text = reply.createdFormat
+            replyCell.contentLabel.text = reply.content
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
     }
 }

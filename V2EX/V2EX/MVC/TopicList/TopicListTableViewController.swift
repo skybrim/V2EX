@@ -31,33 +31,6 @@ class TopicListTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.topicList.topics.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic List Cell", for: indexPath)
-        if let topicCell = cell as? TopicListTableViewCell {
-            let topic = topicList.topics[indexPath.row]
-            topicCell.avatarImageView.kf.setImage(with: topic.avatarUrl, placeholder: UIImage(named: "placeholder"))
-            topicCell.userLabel.text = topic.userName
-            topicCell.detailLabel.text = topic.topicDetail
-            topicCell.nodeLabel.text = topic.nodeName
-            topicCell.titleLabel.text = topic.topicTitle
-        }
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Show Topic Detail", sender: tableView.cellForRow(at: indexPath))
-    }
-    
     //MARK: - private
     private func updateUI() {
         self.tableView.reloadData()
@@ -126,5 +99,35 @@ class TopicListTableViewController: UITableViewController {
                 topicListTableView.separatorInset = UIEdgeInsets.zero
             }
         }
+    }
+}
+
+extension TopicListTableViewController {
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.topicList.topics.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Topic List Cell", for: indexPath)
+        if let topicCell = cell as? TopicListTableViewCell {
+            let topic = topicList.topics[indexPath.row]
+            topicCell.avatarImageView.kf.setImage(with: topic.avatarUrl, placeholder: UIImage(named: "placeholder"))
+            topicCell.userLabel.text = topic.userName
+            topicCell.detailLabel.text = topic.topicDetail
+            topicCell.nodeLabel.text = topic.nodeName
+            topicCell.titleLabel.text = topic.topicTitle
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "Show Topic Detail", sender: tableView.cellForRow(at: indexPath))
     }
 }

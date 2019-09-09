@@ -31,13 +31,31 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
         }
     }
 
+    // MARK: - Restore
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+    }
+    
+    // MARK: - Property
+    
+    var themes = Themes()
+
+}
+
+extension ThemesTableViewController {
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return Themes.Function.all.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Themes.Function.account.rawValue {
             return 0
         } else if section == Themes.Function.theme.rawValue {
@@ -78,18 +96,4 @@ class ThemesTableViewController: UITableViewController, UISplitViewControllerDel
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // MARK: - Restore
-    
-    override func encodeRestorableState(with coder: NSCoder) {
-        super.encodeRestorableState(with: coder)
-    }
-    
-    override func decodeRestorableState(with coder: NSCoder) {
-        super.decodeRestorableState(with: coder)
-    }
-    
-    // MARK: - Property
-    
-    var themes = Themes()
-
 }
