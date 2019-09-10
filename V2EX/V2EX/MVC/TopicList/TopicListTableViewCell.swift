@@ -80,7 +80,7 @@ class TopicListTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = UIColor.init(hex: TextDarkGray)
+        label.textColor = UIColor.color(TextDarkGray)
         return label
     }()
     
@@ -89,7 +89,7 @@ class TopicListTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = UIColor.init(hex: TextGray)
+        label.textColor = UIColor.color(TextGray)
         return label
     }()
     
@@ -97,10 +97,10 @@ class TopicListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.layer.cornerRadius = 3.0
         label.clipsToBounds = true
-        label.backgroundColor = UIColor(hex: "#f5f5f5")
+        label.backgroundColor = UIColor.color(BaseBackground)
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .caption2)
-        label.textColor = UIColor.init(hex: TextGray)
+        label.textColor = UIColor.color(TextGray)
         return label
     }()
     
@@ -109,7 +109,7 @@ class TopicListTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.textColor = UIColor.init(hex: TextBlack)
+        label.textColor = UIColor.color(TextBlack)
         return label
     }()
     

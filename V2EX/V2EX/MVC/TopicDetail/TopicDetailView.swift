@@ -79,7 +79,7 @@ class TopicDetailView: UIView {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = UIColor.init(hex: TextDarkGray)
+        label.textColor = UIColor.color(TextDarkGray)
         return label
     }()
     
@@ -88,7 +88,7 @@ class TopicDetailView: UIView {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = UIColor.init(hex: TextGray)
+        label.textColor = UIColor.color(TextGray)
         return label
     }()
     
@@ -97,7 +97,7 @@ class TopicDetailView: UIView {
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .title3)
-        label.textColor = UIColor.init(hex: TextBlack)
+        label.textColor = UIColor.color(TextBlack)
         return label
     }()
     

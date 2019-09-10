@@ -78,7 +78,7 @@ class TopicReplyTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = UIColor.init(hex: TextDarkGray)
+        label.textColor = UIColor.color(TextDarkGray)
         return label
     }()
     
@@ -87,9 +87,9 @@ class TopicReplyTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = UIColor.init(hex: TextDarkGray)
+        label.textColor = UIColor.color(TextDarkGray)
         label.text = " 楼主 "
-        label.layer.borderColor = UIColor.init(hex: TextDarkGray)?.cgColor
+        label.layer.borderColor = UIColor.color(TextDarkGray).cgColor
         label.layer.borderWidth = 0.5
         label.layer.cornerRadius = 3.0
         return label
@@ -100,7 +100,7 @@ class TopicReplyTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = UIColor.init(hex: TextGray)
+        label.textColor = UIColor.color(TextGray)
         return label
     }()
     
@@ -109,7 +109,7 @@ class TopicReplyTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.textColor = UIColor.init(hex: TextBlack)
+        label.textColor = UIColor.color(TextBlack)
         return label
     }()
     
