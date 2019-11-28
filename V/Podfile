@@ -1,0 +1,31 @@
+platform:ios,'10.0'
+
+use_frameworks!
+inhibit_all_warnings!
+
+target 'V2EX' do
+
+  pod 'Moya'
+  pod 'Ji'
+  pod 'Kingfisher'
+  pod 'SnapKit'
+  pod 'GDPerformanceView-Swift', :configurations => ['Debug']
+  pod 'MJRefresh'
+  pod 'MarkdownView'
+  #pod 'MonkeyKing'
+
+end
+
+target 'V2EXHot' do
+  
+  pod 'Moya'
+  pod 'Kingfisher'
+  
+end
+
+target 'V2EXTests' do
+  
+  pod 'Quick'
+  pod 'Nimble'
+  
+end
