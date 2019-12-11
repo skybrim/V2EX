@@ -12,6 +12,7 @@
 		B8940DE223A09C0400E33740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8940DE123A09C0400E33740 /* ViewController.swift */; };
 		B8940DE723A09C0700E33740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8940DE623A09C0700E33740 /* Assets.xcassets */; };
 		B8940DEA23A09C0700E33740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8940DE823A09C0700E33740 /* LaunchScreen.storyboard */; };
+		B8940DF223A0CACF00E33740 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8940DF123A0CACF00E33740 /* Kit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B8940DE623A09C0700E33740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8940DE923A09C0700E33740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8940DEB23A09C0700E33740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8940DF123A0CACF00E33740 /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				B8940DDD23A09C0400E33740 /* AppDelegate.swift */,
 				B8940DDF23A09C0400E33740 /* SceneDelegate.swift */,
 				B8940DE123A09C0400E33740 /* ViewController.swift */,
+				B8940DF123A0CACF00E33740 /* Kit.swift */,
 				B8940DE623A09C0700E33740 /* Assets.xcassets */,
 				B8940DE823A09C0700E33740 /* LaunchScreen.storyboard */,
 				B8940DEB23A09C0700E33740 /* Info.plist */,
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8940DF223A0CACF00E33740 /* Kit.swift in Sources */,
 				B8940DE223A09C0400E33740 /* ViewController.swift in Sources */,
 				B8940DDE23A09C0400E33740 /* AppDelegate.swift in Sources */,
 				B8940DE023A09C0400E33740 /* SceneDelegate.swift in Sources */,
