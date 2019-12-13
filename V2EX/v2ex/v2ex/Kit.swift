@@ -19,3 +19,39 @@ open class NiblessView: UIView {
     }
     
 }
+
+extension String {
+    /// # 注意性能问题，此下标取值时间复杂度是O(n)
+    subscript(index: Int) -> Character {
+        guard let stringIndex = self.index(self.startIndex, offsetBy: index, limitedBy: self.endIndex) else {
+            fatalError("String index out of range")
+        }
+        return self[stringIndex]
+    }
+}
+
+extension Dictionary {
+    mutating func merge<S: Sequence>(_ sequence: S)
+        where S.Iterator.Element == (key: Key, value: Value) {
+            sequence.forEach{ self[$0] = $1 }
+    }
+    init<S: Sequence>(_ sequence: S)
+        where S.Iterator.Element == (key: Key, value: Value) {
+            self = [:]
+            self.merge(sequence)
+    }
+}
+
+extension Sequence where Iterator.Element : Hashable {
+    func unique() -> [Iterator.Element] {
+        var tmp: Set<Iterator.Element> = []
+        return filter {
+            if tmp.contains($0) {
+                return false
+            } else {
+                tmp.insert($0)
+                return true
+            }
+        }
+    }
+}
