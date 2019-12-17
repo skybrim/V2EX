@@ -12,12 +12,10 @@ open class NiblessView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
     @available(*, unavailable, message: "loading this view from a nib is unsupported")
     public required init?(coder: NSCoder) {
         fatalError("loading this view from a nib is unsupported")
     }
-    
 }
 
 extension String {
@@ -52,6 +50,14 @@ extension Sequence where Iterator.Element : Hashable {
                 tmp.insert($0)
                 return true
             }
+        }
+    }
+}
+
+extension Optional {
+    func withExtendedLifetime(_ body: (Wrapped) -> Void) {
+        if let `self` = self {
+            body(self)
         }
     }
 }
