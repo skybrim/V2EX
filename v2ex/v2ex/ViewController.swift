@@ -20,7 +20,9 @@ class ViewController: UIViewController {
         
         let tempRequet = V2exRequest([Temp].self, path: "/posts")
         
-        AlamofireClient.shared.send(tempRequet) { (result) in
+        
+        
+        AlamofireSession.shared.send(tempRequet) { (result) in
             switch result {
             case .success(let model):
                 dump(model)

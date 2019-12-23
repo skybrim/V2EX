@@ -13,3 +13,7 @@ target 'v2ex' do
   pod 'Alamofire', '~> 5.0.0-rc.3'
 
 end
+
+target 'v2exTests' do
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+end
