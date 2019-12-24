@@ -8,7 +8,6 @@
 
 import Foundation
 @testable import v2ex
-@testable import Alamofire
 
 struct TestClient: Client {
     static let shared = TestClient()
