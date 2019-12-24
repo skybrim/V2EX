@@ -9,7 +9,7 @@
 import Foundation
 @testable import v2ex
 
-struct TestClient: Client {
+struct TestClient: ClientProtocol {
     static let shared = TestClient()
     private init() {}
     
