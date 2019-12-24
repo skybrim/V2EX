@@ -18,11 +18,16 @@ class V2exSessionTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_session() {
+    func test_client_success() {
         let request = TestRequest(TestModel.self, path: "/Net/TestJSON")
-        TestSession.shared.send(request) { (result) in
-//            switch result
-//            case .success()
+        TestClient.shared.send(request) { (result) in
+            switch result {
+            case .success(let model):
+                XCTAssertNotNil(model)
+                XCTAssertEqual(model.userId, model.userId)
+            case .failure(let error):
+                print("\(error)")
+            }
         }
     }
 }

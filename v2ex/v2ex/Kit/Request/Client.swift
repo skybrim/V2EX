@@ -1,21 +1,29 @@
 //
-//  TestSession.swift
-//  v2exTests
+//  Client.swift
+//  v2ex
 //
 //  Created by wiley on 2019/12/23.
 //  Copyright © 2019 wiley. All rights reserved.
 //
 
 import Foundation
-@testable import v2ex
-@testable import Alamofire
+import Alamofire
 
-struct TestSession: Session {
-    static let shared = TestSession()
+// MARK: - Client
+protocol Client {
+    func send<T: RequestProtocol>(_ r: T, handler: @escaping (Result<T.Response, Error>) -> Void)
+    //func download()
+    //...
+}
+
+/// # 使用 Alamofire 发起请求
+struct AlamofireClient: Client {
+    /// # Singleton
+    static let shared = AlamofireClient()
     private init() {}
     
     /// # 发送请求
-    func send<T: Request>(_ request: T, handler: @escaping (Result<T.Response, Error>) -> Void) {
+    func send<T: RequestProtocol>(_ request: T, handler: @escaping (Result<T.Response, Error>) -> Void) {
         guard let url = URL(string: request.host + request.path) else {
             return
         }

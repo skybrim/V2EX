@@ -9,8 +9,8 @@
 import Foundation
 @testable import v2ex
 
-struct TestRequest<T: Parsable & Codable>: Request {
-    var host: String = "https://jsonplaceholder.typicode.com"
+struct TestRequest<T: Parsable & Codable>: RequestProtocol {
+    var host: String = ""
     var path: String
     var method: HTTPMethod
     var parameters: [String: Any]?

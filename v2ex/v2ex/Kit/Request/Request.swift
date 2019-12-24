@@ -19,7 +19,7 @@ enum HTTPMethod: String {
 }
 
 /// # 发起请求遵循 Request 协议
-protocol Request {
+protocol RequestProtocol {
     // 关联类型
     associatedtype Response: Decodable, Parsable
     

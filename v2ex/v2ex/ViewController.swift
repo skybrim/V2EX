@@ -20,9 +20,7 @@ class ViewController: UIViewController {
         
         let tempRequet = V2exRequest([Temp].self, path: "/posts")
         
-        
-        
-        AlamofireSession.shared.send(tempRequet) { (result) in
+        AlamofireClient.shared.send(tempRequet) { (result) in
             switch result {
             case .success(let model):
                 dump(model)
@@ -30,7 +28,6 @@ class ViewController: UIViewController {
                 print("\(error)")
             }
         }
-        
         
         
     }
@@ -41,7 +38,7 @@ enum V2exPath: String {
     case user = "/user"
 }
 
-struct V2exRequest<T: Parsable & Codable>: Request {
+struct V2exRequest<T: Parsable & Codable>: RequestProtocol {
     var host: String = "https://jsonplaceholder.typicode.com"
     var path: String
     var method: HTTPMethod
