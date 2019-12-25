@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Ono
 
 // MARK: - Parse
 protocol Parsable {
@@ -28,3 +29,31 @@ extension Parsable where Self: Decodable {
         }
     }
 }
+
+//extension Parsable where Self: ONOSearching {
+//    static func parse(data: Data) -> Result<Self, Error> {
+//        do {
+//            let document = try ONOXMLDocument(data: data)
+////            document.rootElement.tag
+//
+//            for element in document.rootElement.children.first?.children ?? [] {
+//                let nutrient = element.tag
+//                let amount = element.numberValue!
+//                let unit = element.attributes["units"]!
+//
+//                print("- \(amount)\(unit) \(nutrient)")
+//            }
+//
+//            document.enumerateElements(withXPath: "//food/name") { (element, _, _) in
+//                print(element)
+//            }
+//
+//            document.enumerateElements(withCSS: "food > serving[units]") { (element, _, _) in
+//                print(element)
+//            }
+//            return .success(document)
+//        } catch {
+//            return .failure(error)
+//        }
+//    }
+//}

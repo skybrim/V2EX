@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import Ono
 
 // MARK: - Client
 protocol ClientProtocol {
-    func send<T: RequestProtocol>(_ r: T, handler: @escaping (Result<T.Response, Error>) -> Void)
+    func send<T: RequestProtocol>(_ request: T, handler: @escaping (Result<T.Response, Error>) -> Void)
     //func download()
     //...
 }
@@ -39,6 +40,13 @@ struct AlamofireClient: ClientProtocol {
             switch response.result {
             case .success(let data):
                 // parse data
+                let document = try! ONOXMLDocument(data: data)
+                for element in document.rootElement.children[1].children[1].children {
+                    print("- \n")
+                    dump(element)
+                }
+                
+                
                 let parseResult = T.Response.parse(data: data)
                 // 判断解析结果
                 switch parseResult {
