@@ -18,16 +18,19 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.lightGray
         
         /// https://www.v2ex.com/?tab=all
-        let request = v2exRequest<Temp>()
+        let request = V2exRequest<TopicList>()
         AlamofireClient.shared.send(request) { (result) in
-            dump(result)
+            
         }
     }
 }
 
-struct v2exRequest<T: Parsable & Decodable>: RequestProtocol {
+struct V2exRequest<T: HTMLParsable>: HTMLRequestProtocol {
+    // https://www.v2ex.com/t/632212#reply49
     var host: String = "https://www.v2ex.com"
     var path: String = "/?tab=all"
+//    var path: String = "/t/632212#reply49"
+//    var path: String = "/member/Skybrim"
     var method: HTTPMethod = .GET
     var parameters: [String : Any]?
     var headers: [String : String]?
@@ -36,6 +39,4 @@ struct v2exRequest<T: Parsable & Decodable>: RequestProtocol {
     
 }
 
-struct Temp: Parsable, Decodable {
-    
-}
+

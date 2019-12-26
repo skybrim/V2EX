@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B826A56723B35E4800C9DFDA /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A56623B35E4800C9DFDA /* Temp.swift */; };
+		B86EAB5C23B49D4200F4167D /* TopicListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86EAB5B23B49D4200F4167D /* TopicListModel.swift */; };
 		B891475923B0B82000476C8B /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891475823B0B82000476C8B /* Parsable.swift */; };
 		B891475B23B0B83000476C8B /* ClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891475A23B0B83000476C8B /* ClientProtocol.swift */; };
 		B891475E23B0BA3B00476C8B /* V2exSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891475D23B0BA3B00476C8B /* V2exSessionTest.swift */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		138A940CE1E123FD331ACF0A /* Pods-v2ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.debug.xcconfig"; path = "Target Support Files/Pods-v2ex/Pods-v2ex.debug.xcconfig"; sourceTree = "<group>"; };
 		178A51DDE34A9963DF36165D /* Pods_v2ex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_v2ex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B826A56623B35E4800C9DFDA /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		B86EAB5B23B49D4200F4167D /* TopicListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListModel.swift; sourceTree = "<group>"; };
 		B891474C23B0ACF100476C8B /* v2exTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = v2exTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B891475023B0ACF100476C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B891475823B0B82000476C8B /* Parsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsable.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			children = (
 				B8940DDD23A09C0400E33740 /* AppDelegate.swift */,
 				B8940DE123A09C0400E33740 /* ViewController.swift */,
-				B826A56623B35E4800C9DFDA /* Temp.swift */,
+				B86EAB5B23B49D4200F4167D /* TopicListModel.swift */,
 				B8E392C123AC7BD800E9FA40 /* Kit */,
 				B8940DE623A09C0700E33740 /* Assets.xcassets */,
 				B8940DE823A09C0700E33740 /* LaunchScreen.storyboard */,
@@ -358,12 +358,12 @@
 				B8940DF223A0CACF00E33740 /* Kit.swift in Sources */,
 				B8E392C623AC7D6900E9FA40 /* Sequence+Additions.swift in Sources */,
 				B8940DE223A09C0400E33740 /* ViewController.swift in Sources */,
+				B86EAB5C23B49D4200F4167D /* TopicListModel.swift in Sources */,
 				B8E392C423AC7D3E00E9FA40 /* String+Additions.swift in Sources */,
 				B8940DDE23A09C0400E33740 /* AppDelegate.swift in Sources */,
 				B891475923B0B82000476C8B /* Parsable.swift in Sources */,
 				B891475B23B0B83000476C8B /* ClientProtocol.swift in Sources */,
 				B8E392C823AC7D7C00E9FA40 /* Dictionary+Additions.swift in Sources */,
-				B826A56723B35E4800C9DFDA /* Temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

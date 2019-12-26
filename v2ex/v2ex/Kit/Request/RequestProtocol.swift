@@ -21,7 +21,7 @@ enum HTTPMethod: String {
 /// # 发起请求遵循 Request 协议
 protocol RequestProtocol {
     // 关联类型
-    associatedtype Response: Decodable, Parsable
+    associatedtype Response: Parsable
     
     var host: String { get }
     var path: String { get }
@@ -29,4 +29,12 @@ protocol RequestProtocol {
     var method: HTTPMethod { get }
     var parameters: [String: Any]? { get }
     var headers: [String: String]? { get }
+}
+
+protocol HTMLRequestProtocol: RequestProtocol where Self.Response: HTMLParsable {
+    
+}
+
+protocol CodableRequestProtocol: RequestProtocol where Self.Response: Decodable {
+    
 }
